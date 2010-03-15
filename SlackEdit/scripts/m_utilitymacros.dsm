@@ -1,0 +1,380 @@
+'------------------------------------------------------------------------------
+'FILE DESCRIPTION: Contains loads of useful macros
+'------------------------------------------------------------------------------
+'Dim bRunning
+
+Function GetProjectDir(szFullName)
+	Dim aszProjectPath
+	Dim cCount
+	Dim szFullPath
+	Dim i
+
+	aszProjectPath = Split(StrReverse(szFullName), "\", -1, vbTextCompare)
+	cCount = UBound(aszProjectPath)
+	szFullPath = ""
+
+	For i = 1 To cCount
+		szFullPath = szFullPath & "\" & aszProjectPath(i)
+	Next
+
+	GetProjectDir = StrReverse(szFullPath)
+End Function
+
+Function GetDate()
+	Dim szMonth
+	Dim szDay
+	Dim szYear
+
+	nNow = Now()
+
+	szMonth = DatePart("m", nNow)
+	szDay = DatePart("d", nNow)
+	szYear = DatePart("yyyy", nNow)
+
+	If Len(szMonth) = 1 Then
+		szMonth = "0" & szMonth
+	End If
+	
+	If Len(szDay) = 1 Then
+		szDay = "0" & szDay
+	End If
+
+	szYear = Right(szYear, 2)
+
+	GetDate = szMonth & "/" & szDay & "/" & szYear
+End Function
+
+Sub FindDuplicateResourceValues()
+'DESCRIPTION: Searches through a resource definition header file and finds duplicate items (by value)
+	Dim ValueArray()
+
+	If ActiveDocument.Type = "Text" Then
+		If ActiveDocument.Language = dsCPP Then
+			Dim tsSelection
+
+			Set tsSelection = ActiveDocument.Selection
+			tsSelection.StartOfDocument
+
+			i = 0
+
+			While tsSelection.FindText("#define", dsMatchWord + szMatchCase) = True
+				tsSelection.WordRight dsMove, 2
+				tsSelection.WordRight dsExtend, 1
+				ReDim Preserve ValueArray(2, i + 1)
+				If i > 0 Then
+					For j = 0 To UBound(ValueArray, 2) - 1
+						If ValueArray(1, j) = tsSelection.Text Then
+							MsgBox("Found duplicate values (" & tsSelection.Text & ") on lines " & ValueArray(0, j) & " and " & tsSelection.CurrentLine)
+							Exit Sub
+						End If
+					Next
+				End If
+
+				ValueArray(0, i) = tsSelection.CurrentLine
+				ValueArray(1, i) = tsSelection.Text
+
+				i = i + 1
+			WEnd
+
+			MsgBox "No duplicates were found"
+		End If
+	End If
+End Sub
+
+Sub IncrementalResourceIDs()
+'DESCRIPTION: Takes the selection and a start value and sets the resource values with incrementing value
+
+	If ActiveDocument.Type = "Text" Then
+		If ActiveDocument.Language = dsCPP Then
+			Dim tsSelection
+
+			nStartValue = InputBox("Please insert a value to start at", "Setting Resource IDs...")
+			If nStartValue = "" Then
+				Exit Sub
+			End If
+
+			Set tsSelection = ActiveDocument.Selection
+
+			nStartLine = tsSelection.TopLine
+			nEndLine = tsSelection.BottomLine
+
+			tsSelection.GoToLine nStartLine
+
+			While tsSelection.FindText("#define", dsMatchWord + szMatchCase) = True And nStartLine < nEndLine
+				tsSelection.WordRight dsMove, 2
+				tsSelection.WordRight dsExtend, 1
+				tsSelection.Text = nStartValue
+
+				nStartLine = tsSelection.CurrentLine
+				nStartValue = nStartValue + 1
+			WEnd
+		End If
+	End If
+End Sub
+
+
+'This macro won't work very well with Application_DocumentSave
+'It could but msdev's macro support sucks as one has to move the
+'whole selection (i.e. caret) to the place where one would insert
+'text. This makes the screen jump.
+
+Sub UpdateRevisionDateAndSave()
+'DESCRIPTION: Updates information in a C source or header documents file header
+
+'	If bRunning = 1 Then
+'		Exit Sub
+'	End If
+
+'	bRunning = 1
+
+	If ActiveDocument.Type = "Text" Then
+		If ActiveDocument.Language = dsCPP Then
+			Dim tsSelection
+
+			Set tsSelection = ActiveDocument.Selection
+			nCurrentColumn	= tsSelection.CurrentColumn
+			nCurrentLine	= tsSelection.CurrentLine
+			tsSelection.MoveTo 9, 17
+			tsSelection.EndOfLine dsExtend
+
+			tsSelection.Text = GetDate()
+			tsSelection.MoveTo nCurrentLine, nCurrentColumn
+
+			ActiveDocument.Save
+		End If
+	End If
+
+'	bRunning = 0
+End Sub
+
+Sub CreateCSourceDocument()
+'DESCRIPTION: Creates a new C Source Document with a file header
+	szDefaultUserName = "pcppopper"
+	szDate = GetDate()
+	szFileName = InputBox("Please insert a filename (e.g. 'source.c' or just 'source')", "Creating document...")
+	If szFileName = "" Then
+		Exit Sub
+	End If
+	If Right(szFileName, 2) <> ".c" Then
+		szFileName = szFileName + ".c"
+	End If
+
+	Documents.Add "Text"
+	ActiveDocument.Language = dsCPP
+	ActiveDocument.Selection = _
+"/*****************************************************************" + vbLf + _
+" *                          FILE HEADER                          *" + vbLf + _
+" *****************************************************************" + vbLf + _
+" * Project    : " + ActiveProject.Name + vbLf + _
+" *" + vbLf + _
+" * File       : " + szFileName + vbLf + _
+" * Created    : " + szDate + vbLf + _
+" * Owner      : " + szDefaultUserName + vbLf + _
+" * Revised on : " + szDate + vbLf + _
+" * Comments   : " + vbLf + _
+" *              " + vbLf + _
+" *              " + vbLf + _
+" *****************************************************************/" + vbLf + _
+vbLf + _
+"#include " + Chr(34) + "../pcp_generic/pcp_includes.h" + Chr(34) + vbLf + _
+vbLf + _
+"/****************************************************************" + vbLf + _
+" * Type Definitions" + vbLf + _
+" ****************************************************************/" + vbLf + _
+vbLf + _
+"/****************************************************************" + vbLf + _
+" * Function Definitions" + vbLf + _
+" ****************************************************************/" + vbLf + _
+vbLf + _
+"/****************************************************************" + vbLf + _
+" * Global Variables" + vbLf + _
+" ****************************************************************/" + vbLf + _
+vbLf + _
+"/****************************************************************" + vbLf + _
+" * Function Implementations" + vbLf + _
+" ****************************************************************/" + vbLf
+
+	szFullName = GetProjectDir(ActiveProject.FullName) + szFileName
+	ActiveDocument.Save szFullName, True
+	ActiveDocument.Selection.EndOfDocument
+End Sub
+
+Sub CreateCHeaderDocument()
+'DESCRIPTION: Creates a new C Header Document with a file header
+	szDefaultUserName = "pcppopper"
+	szDate = GetDate()
+	szFileName = InputBox("Please insert a filename (e.g. 'header.h' or just 'header')", "Creating document...")
+	If Right(szFileName, 2) <> ".h" Then
+		szFileName = szFileName + ".h"
+	End If
+	szUFileName = UCase(szFileName)
+	szUFileName = Replace(szUFileName, ".", "_")
+
+	Documents.Add "Text"
+	ActiveDocument.Language = dsCPP
+	ActiveDocument.Selection = _
+"/*****************************************************************" + vbLf + _
+" *                          FILE HEADER                          *" + vbLf + _
+" *****************************************************************" + vbLf + _
+" * Project    : " + ActiveProject.Name + vbLf + _
+" *" + vbLf + _
+" * File       : " + szFileName + vbLf + _
+" * Created    : " + szDate + vbLf + _
+" * Owner      : " + szDefaultUserName + vbLf + _
+" * Revised on : " + szDate + vbLf + _
+" * Comments   : " + vbLf + _
+" *              " + vbLf + _
+" *              " + vbLf + _
+" ****************************************************************/" + vbLf + _
+vbLf + _
+"#ifndef __" + szUFileName + vbLf + _
+"#define __" + szUFileName + vbLf + _
+vbLf + _
+"#endif /* __" + szUFileName + " */" + vbLf
+
+	szFullName = GetProjectDir(ActiveProject.FullName) + szFileName
+	ActiveDocument.Save szFullName, True
+	ActiveDocument.Selection.MoveTo 17, 1
+End Sub
+
+Sub CopyDLLsAndRunDebugger()
+'DESCRIPTION: Copies necessary dlls to the appropriate directory and then runs the debugger
+	Dim aDLLs(4)
+	Dim szRoot
+	Dim szNewRoot
+	Dim fso
+	  
+	aDLLs(0) = "pcp_controls"
+	aDLLs(1) = "pcp_generic"
+	aDLLs(2) = "pcp_edit"
+	aDLLs(3) = "pcp_paint"
+
+	szRoot = "c:\my documents\my source code\"
+	szNewRoot = szRoot + "SlackEdit\output\debug\"
+
+	Set fso = CreateObject("Scripting.FileSystemObject")
+
+	' Now copy the necessary DLLs to the necessary directory =P
+	For i = 0 To UBound(aDLLs)
+		fso.CopyFile szRoot + aDLLs(i) + "\debug\" + aDLLs(i), szNewRoot + aDLLs(i)
+	Next
+
+	' Start the debugger
+	Application.Debugger.Go
+End Sub
+
+Sub TempDumb()
+	Dim tsSelection
+	Dim szName
+	Dim szParams
+	
+	szReturn = ""
+	szEndReturn = ""
+
+	Set tsSelection = ActiveDocument.Selection
+	tsSelection.Text = "static"
+	tsSelection.Delete 1
+	tsSelection.Text = " "
+	tsSelection.WordRight dsExtend
+	If tsSelection.Text <> "void " Then
+		szReturn = "return ("
+		szEndReturn = ")"
+	End If
+	tsSelection.WordLeft
+	tsSelection.WordRight
+	tsSelection.Delete 2
+	tsSelection.Text = "TextEdit_Interface_"
+	tsSelection.WordRight dsExtend
+	szName = tsSelection.Text
+	tsSelection.Delete
+	tsSelection.Text = szName
+	tsSelection.Delete
+	tsSelection.EndOfLine dsExtend
+	szParams = tsSelection.Text
+	tsSelection.Delete
+	tsSelection.Text = szParams
+	tsSelection.Backspace
+	tsSelection.Text = vbLf + "{" + vbLf + "	" + szReturn + "TextEdit_View_" + szName + szParams + vbLf + "}" + vbLf
+	tsSelection.WordLeft dsMove, 4
+	tsSelection.StartOfLine
+	tsSelection.WordRight dsMove, 3
+	If szReturn <> "" Then
+		tsSelection.WordRight dsMove, 2
+	End If
+	tsSelection.Text = "(("
+	tsSelection.WordRight
+	tsSelection.CharLeft dsExtend
+	tsSelection.Text = ")"
+	tsSelection.WordRight
+	tsSelection.Text = ")->lpte"
+	tsSelection.EndOfLine
+	tsSelection.CharLeft
+	tsSelection.Text = szEndReturn
+	tsSelection.EndOfLine
+	tsSelection.WordRight dsMove, 3
+	tsSelection.CharLeft
+End Sub
+
+Sub TempDumb2()
+	Dim tsSelection
+	Dim szName
+
+	Set tsSelection = ActiveDocument.Selection
+	tsSelection.WordRight dsExtend, 2
+	tsSelection.CharRight dsExtend, 19
+	tsSelection.Delete
+	tsSelection.WordRight dsExtend
+	szName = tsSelection.Text
+	tsSelection.EndOfLine dsExtend
+	tsSelection.Delete
+	tsSelection.StartOfLine
+	tsSelection.Text = "	s_teInterface->lpVtbl->" + szName + " = TextEdit_Interface_" + szName + ";"
+	tsSelection.LineDown
+	tsSelection.StartOfLine
+End Sub
+
+Sub TempDumb3()
+	Dim tsSelection
+	Dim szName
+	Dim aItems()
+
+	i = 0
+
+	Set tsSelection = ActiveDocument.Selection
+	tsSelection.WordRight dsExtend, 3
+	tsSelection.Delete
+	tsSelection.WordRight dsExtend
+	szName = tsSelection.Text
+	tsSelection.Text = "#define PCP_Edit_" + szName
+	tsSelection.Delete
+	tsSelection.CharRight
+	tsSelection.WordRight dsExtend
+	tsSelection.Delete
+	tsSelection.WordRight
+	tsSelection.WordRight dsExtend
+	While tsSelection.Text = ", "
+		i = i + 1
+		ReDim Preserve aItems(2, i)
+
+		tsSelection.WordRight
+		tsSelection.WordRight dsExtend
+		aItems(0, i - 1) = tsSelection.Text
+		aItems(0, i - 1) = RTrim(aItems(0, i - 1))
+		tsSelection.Delete
+		tsSelection.WordRight dsExtend
+		aItems(1, i - 1) = tsSelection.Text
+		tsSelection.WordRight
+		tsSelection.WordRight dsExtend
+	Wend
+	tsSelection.EndOfLine
+	tsSelection.Backspace
+	tsSelection.Text = " \" + vbLf + "	((LPEDITINTERFACE)(lpInterface)->lpVtbl->" + szName + "((LPEDITINTERFACE)(lpInterface)"
+	If i > 0 Then
+		For j = 0 To i - 1
+			tsSelection.Text = ", (" + aItems(0, j) + ")(" + aItems(1, j) + ")"
+		Next
+	End If
+	tsSelection.Text = "))" + vbLf
+	tsSelection.LineDown
+	tsSelection.StartOfLine
+End Sub

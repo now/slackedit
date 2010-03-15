@@ -1,0 +1,14 @@
+ClipbookTitle="TCL ClipPhile Tester"
+#TclPhile=PhastPadScript.tcl
+ClipbookSort=FALSE
+ClipbookTclEnable=TRUE
+
+ItemTitle="Long Time-Date"
+ItemBody=longtimedate
+
+ItemTitle="Multi Line Comment"
+ItemBody=ml_comment
+
+ItemTitle=ToLower
+ItemBody="set lwrstring [string tolower [get_sel_text]]
+replace_sel $lwrstring"

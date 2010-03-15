@@ -1,0 +1,14 @@
+ClipbookTitle="Test Extended Clipbook Phile"
+ClipbookSort=TRUE
+
+ItemTitle=Pos
+ItemBody="<font>^bPut your fucin phont settings here!^e</fo^^|nt>"
+
+ItemTitle=Cursor
+ItemBody=<font>^|</font>
+
+ItemTitle=Selection
+ItemBody=<big>^s</big>
+
+ItemTitle="Special Chars"
+ItemBody=\n\"\\\#\Y^^^X

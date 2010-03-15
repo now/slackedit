@@ -1,0 +1,1195 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "slack_resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON    DISCARDABLE     "resources\\main.ico"
+IDI_EDIT                ICON    DISCARDABLE     "resources\\doc.ico"
+IDI_CANCEL              ICON    DISCARDABLE     "resources\\Cancel.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New",                        IDM_FILE_NEW, HELP
+        MENUITEM "&Open...",                    IDM_FILE_OPEN
+        MENUITEM "Ad&vanced Open...",           IDM_FILE_ADVANCEDOPEN
+        MENUITEM "Open &Favorite(s)...",        IDM_FILE_FAVORITEOPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Save",                       IDM_FILE_SAVE
+        MENUITEM "Save &As...",                 IDM_FILE_SAVEAS
+        MENUITEM "Save A&ll",                   IDM_FILE_SAVEALL
+        MENUITEM SEPARATOR
+        MENUITEM "R&ead Only",                  IDM_FILE_READONLY
+        MENUITEM SEPARATOR
+        MENUITEM "Page Set&up",                 IDM_FILE_PAGESETUP
+        MENUITEM "&Print...",                   IDM_FILE_PRINT
+        MENUITEM SEPARATOR
+        POPUP "&Recent Files"
+        BEGIN
+            MENUITEM "Clear Non-E&xistent Files",   IDM_FILE_RECENTFILES_CLEARNONEXISTENTFILES
+
+            MENUITEM SEPARATOR
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Close SlackEdit",            IDM_FILE_CLOSE
+        MENUITEM "E&xit SlackEdit",             IDM_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       IDM_EDIT_UNDO
+        MENUITEM "&Redo",                       IDM_EDIT_REDO
+        MENUITEM SEPARATOR
+        POPUP "Cu&t"
+        BEGIN
+            MENUITEM "Cu&t",                        IDM_EDIT_CUT
+            MENUITEM "&Append Cut to Clipboard",    IDM_EDIT_CUT_APPENDCUTTOCLIPBOARD
+
+            MENUITEM "A&ppend Clipboard to Cut",    IDM_EDIT_CUT_APPENDCLIPBOARDTOCUT
+
+        END
+        POPUP "&Copy"
+        BEGIN
+            MENUITEM "&Copy",                       IDM_EDIT_COPY
+            MENUITEM "&Append Copy to Clipboard",   IDM_EDIT_COPY_APPENDCOPYTOCLIPBOARD
+
+            MENUITEM "A&ppend Clipboard to Copy",   IDM_EDIT_COPY_APPENDCLIPBOARDTOCOPY
+
+        END
+        MENUITEM "&Paste",                      IDM_EDIT_PASTE
+        MENUITEM "&Delete",                     IDM_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All",                 IDM_EDIT_SELECTALL
+        MENUITEM SEPARATOR
+        POPUP "&Num Bookmarks"
+        BEGIN
+            MENUITEM "&Clear Bookmarks",            IDM_EDIT_NUMBOOKMARKS_CLEARBOOKMARKS
+
+            MENUITEM SEPARATOR
+            MENUITEM "Bookmark &1",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK1
+
+            MENUITEM "Bookmark &2",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK2
+
+            MENUITEM "Bookmark &3",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK3
+
+            MENUITEM "Bookmark &4",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK4
+
+            MENUITEM "Bookmark &5",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK5
+
+            MENUITEM "Bookmark &6",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK6
+
+            MENUITEM "Bookmark &7",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK7
+
+            MENUITEM "Bookmark &8",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK8
+
+            MENUITEM "Bookmark &9",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK9
+
+            MENUITEM "Bookmark &0",                 IDM_EDIT_NUMBOOKMARKS_BOOKMARK0
+
+        END
+        POPUP "&Goto Bookmarks"
+        BEGIN
+            MENUITEM "Bookmark &1",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK1
+
+            MENUITEM "Bookmark &2",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK2
+
+            MENUITEM "Bookmark &3",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK3
+
+            MENUITEM "Bookmark &4",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK4
+
+            MENUITEM "Bookmark &5",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK5
+
+            MENUITEM "Bookmark &6",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK6
+
+            MENUITEM "Bookmark &7",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK7
+
+            MENUITEM "Bookmark &8",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK8
+
+            MENUITEM "Bookmark &9",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK9
+
+            MENUITEM "Bookmark &0",                 IDM_EDIT_GOTOBOOKMARKS_BOOKMARK0
+
+        END
+        POPUP "&Bookmarks"
+        BEGIN
+            MENUITEM "&Toggle Bookmark",            IDM_EDIT_BOOKMARKS_TOGGLEBOOKMARK
+
+            MENUITEM "&Next Bookmark",              IDM_EDIT_BOOKMARKS_NEXTBOOKMARK
+
+            MENUITEM "Previous Bookmark",           IDM_EDIT_BOOKMARKS_PREVIOUSBOOKMARK
+
+            MENUITEM "Clear All Bookmarks",         IDM_EDIT_BOOKMARKS_CLEARALLBOOKMARKS
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Auto Complete",              IDM_EDIT_AUTOCOMPLETE
+        MENUITEM "&Match Brace",                IDM_EDIT_MATCHBRACE
+        MENUITEM "Goto &Last Change",           IDM_EDIT_GOTOLASTCHANGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Indent",                     IDM_EDIT_INDENT
+        MENUITEM "Unind&ent",                   IDM_EDIT_UNINDENT
+    END
+    POPUP "&Search"
+    BEGIN
+        MENUITEM "&Find...",                    IDM_SEARCH_FIND
+        MENUITEM "Find &Next",                  IDM_SEARCH_FINDNEXT
+        MENUITEM "Find P&revious",              IDM_SEARCH_FINDPREVIOUS
+        MENUITEM "Rep&lace...",                 IDM_SEARCH_REPLACE
+        MENUITEM SEPARATOR
+        MENUITEM "QuickFind Next",              IDM_SEARCH_QUICKFIND_NEXT
+        MENUITEM "QuickFind Previous",          IDM_SEARCH_QUICKFIND_PREVIOUS
+
+        MENUITEM SEPARATOR
+        MENUITEM "Incremental Forward",         IDM_SEARCH_INCREMENTALFORWARD
+
+        MENUITEM "Incremental Reverse",         IDM_SEARCH_INCREMENTALBACKWARD
+
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Children"
+        BEGIN
+            MENUITEM "Clipbook",                    IDM_VIEW_CHILDREN_CLIPBOOK
+
+            MENUITEM "&Output Window",              IDM_VIEW_CHILDREN_OUTPUTWINDOW
+
+            MENUITEM "&Statusbar",                  IDM_VIEW_CHILDREN_STATUSBAR
+
+            MENUITEM "&Windowbar",                  IDM_VIEW_CHILDREN_WINDOWBAR
+
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Rebar Items"
+        BEGIN
+            MENUITEM "&Toolbar",                    IDM_VIEW_REBARITEMS_TOOLBAR
+
+            MENUITEM "&Quicksearch",                IDM_VIEW_REBARITEMS_QUICKSEARCH
+
+            MENUITEM "&Goto Line",                  IDM_VIEW_REBARITEMS_GOTOLINE
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Full screen",                IDM_VIEW_FULLSCREEN
+        POPUP "&Line-Feed Mode"
+        BEGIN
+            MENUITEM "&DOS",                        IDM_VIEW_LINEFEEDMODE_DOS
+
+            MENUITEM "&UNIX",                       IDM_VIEW_LINEFEEDMODE_UNIX
+
+            MENUITEM "&MAC",                        IDM_VIEW_LINEFEEDMODE_MAC
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Run &Dos Command",            IDM_VIEW_RUNDOSCOMMAND
+        MENUITEM "Run &Windows Command",        IDM_VIEW_RUNWINSLOWSCOMMAND
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "Set &Font...",                IDM_OPTIONS_SETFONT
+        MENUITEM SEPARATOR
+        MENUITEM "&Configuration...",           IDM_OPTIONS_SETTINGS
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "Cl&ose",                      IDM_WINDOW_CLOSE
+        MENUITEM "Clo&se All",                  IDM_WINDOW_CLOSEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Next",                       IDM_WINDOW_NEXT
+        MENUITEM "&Previous",                   IDM_WINDOW_PREVIOUS
+        MENUITEM SEPARATOR
+        MENUITEM "&Cascade",                    IDM_WINDOW_CASCADE
+        MENUITEM "Tile &Horizontally",          IDM_WINDOW_TILEHORIZONTAL
+        MENUITEM "Tile &Vertically",            IDM_WINDOW_TILEVERTICAL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      IDM_HELP_ABOUT
+        MENUITEM "Tip-of-da-Day",               IDM_HELP_TIPOFDADAY
+    END
+END
+
+IDR_TRAYMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&TrayMenu"
+    BEGIN
+        MENUITEM "&Restore SlackEdit",          IDM_TRAY_RESTORE
+        MENUITEM SEPARATOR
+        MENUITEM "Open...\tCtrl+O",             IDM_TRAY_OPEN
+        MENUITEM "Re&cent Files",               65535
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit SlackEdit\tCtrl+D",     IDM_TRAY_EXIT
+    END
+END
+
+IDR_CLIPMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Clip Menu"
+    BEGIN
+        MENUITEM "&Edit Clip File",             IDM_CLIPMENU_EDITCLIPFILE
+        MENUITEM "&Reload Clip File",           IDM_CLIPMENU_RELOADCLIPFILE
+    END
+END
+
+IDR_FAVORITESMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Favorites Menu"
+    BEGIN
+        MENUITEM "&Open",                       IDM_FAVORITESMENU_OPEN
+        MENUITEM "&Remove",                     IDM_FAVORITESMENU_REMOVE
+    END
+END
+
+IDR_REBARMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Rebar Menu"
+    BEGIN
+        MENUITEM "&Toolbar",                    IDM_REBARMENU_TOOLBAR
+        MENUITEM "&Find Combo",                 IDM_REBARMENU_FINDCOMBO
+        MENUITEM "&Goto Line",                  IDM_REBARMENU_GOTOLINE
+    END
+END
+
+IDR_WINDOWLISTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Window List Menu"
+    BEGIN
+        MENUITEM "&Activate",                   IDM_WINDOWLISTMENU_ACTIVATE
+        MENUITEM "&Close",                      IDM_WINDOWLISTMENU_CLOSE
+        MENUITEM "&Save",                       IDM_WINDOWLISTMENU_SAVE
+    END
+END
+
+IDR_HEXEDITMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Hex Edit Menu"
+    BEGIN
+        MENUITEM "&Undo",                       IDM_HEXEDITMENU_UNDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t",                        IDM_HEXEDITMENU_CUT
+        MENUITEM "&Copy",                       IDM_HEXEDITMENU_COPY
+        MENUITEM "&Paste",                      IDM_HEXEDITMENU_PASTE
+        MENUITEM "&Delete",                     IDM_HEXEDITMENU_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Select All",                 IDM_HEXEDITMENU_SELECTALL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ADVANCEDOPEN DIALOGEX 0, 0, 250, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "Fast Open"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Path:",IDC_STATIC,7,10,17,8
+    COMBOBOX        IDC_COMBO_PATH,28,8,158,80,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Browse",IDC_BUTTON_PATHBROWSE,193,7,50,14
+    LTEXT           "&File:",IDC_STATIC,7,29,17,8
+    COMBOBOX        IDC_COMBO_FILE,27,27,158,80,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "B&rowse",IDC_BUTTON_FILEBROWSE,193,26,50,14
+    CONTROL         "&Add File to Favorites",IDC_CHECK_FAVORITEFILEADD,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,53,85,8
+    DEFPUSHBUTTON   "&Open",IDOK,136,50,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,193,50,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,45,236,1,
+                    WS_EX_STATICEDGE
+END
+
+IDD_FIND DIALOG DISCARDABLE  0, 0, 262, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Find"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Fi&nd what:",IDC_STATIC,7,8,39,10
+    COMBOBOX        IDC_COMBO_FIND,53,7,144,80,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Replac&e with:",IDC_LABEL_REPLACE,7,27,44,8
+    COMBOBOX        IDC_COMBO_REPLACE,53,25,144,80,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Whole word only",IDC_CHECK_WHOLEWORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,48,66,10
+    CONTROL         "Case &sensitive",IDC_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,60,60,10
+    GROUPBOX        "&Direction",IDC_DIRECTION,91,46,80,36
+    CONTROL         "&Up",IDC_RADIO_DIRECTION_UP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,97,56,65,10
+    CONTROL         "&Down",IDC_RADIO_DIRECTION_DOWN,"Button",
+                    BS_AUTORADIOBUTTON,97,68,65,10
+    DEFPUSHBUTTON   "&Find Next",IDOK,205,7,50,14,WS_DISABLED
+    PUSHBUTTON      "&Replace",IDC_BUTTON_REPLACE,205,58,50,14
+    PUSHBUTTON      "Replace &All",IDC_BUTTON_REPLACEALL,205,75,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,205,24,50,14
+    PUSHBUTTON      "&Help",IDC_BUTTON_HELP,205,41,50,14
+    CONTROL         "Regular E&xpression",IDC_CHECK_REGEXP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,72,77,10
+    CONTROL         "Wra&p Search",IDC_CHECK_WRAPSEARCH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,84,58,10
+END
+
+IDD_CONFIG_WINDOW DIALOGEX 0, 0, 270, 138
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&Window Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Always on &Top",IDC_CHECK_MAIN_ONTOP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,18,59,10
+    CONTROL         "Always on &VWM",IDC_CHECK_MAIN_STICKY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,30,65,9
+    CONTROL         "&Centered",IDC_CHECK_MAIN_CENTERED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,41,43,9
+    CONTROL         "Move to tr&ay on close",IDC_CHECK_TRAY_ONCLOSE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,67,84,10
+    CONTROL         "Reload la&st open windows",IDC_CHECK_SAVEOPENWINS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,92,99,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,152,11,111,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Dialog Settings",IDC_STATIC,144,7,48,8
+    CONTROL         "Center &Find Dialog",IDC_CHECK_FIND_CENTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,144,18,79,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center &Replace Dialog",IDC_CHECK_REPLACE_CENTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,144,29,87,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center Advanced &Open Dialog",
+                    IDC_CHECK_ADVANCEDOPEN_CENTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,144,51,113,10,WS_EX_TRANSPARENT
+    CONTROL         "Center Favorit&es Dialog",IDC_CHECK_FAVORITES_CENTER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,144,62,89,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center &Print Dialog",IDC_CHECK_PRINT_CENTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,144,73,75,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center Settin&gs Dialog",IDC_CHECK_SETTINGS_CENTER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,144,84,87,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center Abo&ut Dialog",IDC_CHECK_ABOUT_CENTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,144,96,79,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Center &Window List Dialog",IDC_CHECK_WINDOWLIST_CENTER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,144,40,99,10,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Only reload if last e&xit successful",
+                    IDC_CHECK_CRASHPROTECTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,114,117,10
+    CONTROL         "O&nly reload if no command line",
+                    IDC_CHECK_ONLYRELOADIFNOCMDLINE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,103,112,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,85,115,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "MD&I Window",IDC_STATIC,7,81,42,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,60,115,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Tra&y Icon",IDC_STATIC,7,56,31,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,8,10,115,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Main Window",IDC_STATIC,7,7,44,8
+END
+
+IDD_CONFIG_EDIT DIALOGEX 0, 0, 302, 189
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&Edit Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Put Paste Recent Text in Clipboard",
+                    IDC_CHECK_PASTETOCLIPBOARD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,7,127,10
+    CONTROL         "Auto Sa&ve every",IDC_CHECK_AUTOSAVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,55,69,10
+    EDITTEXT        IDC_EDIT_AUTOSAVEINTERVAL,79,54,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_SPIN_ASMS,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,71,59,10,14
+    LTEXT           "minutes",IDC_STATIC,110,55,25,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,108,225,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Backup Settings",IDC_STATIC,7,104,53,8
+    LTEXT           "Backup &Extension:",IDC_STATIC,7,117,60,8
+    EDITTEXT        IDC_EDIT_BACKUPEXT,80,115,33,12,ES_AUTOHSCROLL
+    LTEXT           "Auto Save &Extension:",IDC_STATIC,7,39,69,8
+    EDITTEXT        IDC_EDIT_AUTOSAVEEXT,79,37,33,12,ES_AUTOHSCROLL
+    CONTROL         "Backup on &Save",IDC_CHECK_BACKUPONSAVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,131,69,10
+    LTEXT           "&Backup Directory:",IDC_STATIC,16,146,58,8
+    EDITTEXT        IDC_EDIT_BACKUPDIR,77,144,158,12,ES_AUTOHSCROLL
+    CONTROL         "&Use Backup Directory",IDC_CHECK_USEBACKUPDIR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,160,85,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,31,225,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Auto Save",IDC_STATIC,7,27,34,8
+    LTEXT           "&Auto Save Directory:",IDC_STATIC,8,72,66,8
+    EDITTEXT        IDC_EDIT_AUTOSAVEDIR,78,71,158,12,ES_AUTOHSCROLL
+    CONTROL         "&Use Auto Save Directory",IDC_CHECK_USEAUTOSAVEDIR,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,88,94,10
+    PUSHBUTTON      "&Browse",IDC_BUTTON_BROWSEAUTOSAVEDIR,245,70,50,14
+    PUSHBUTTON      "B&rowse",IDC_BUTTON_BROWSEBACKUPDIR,245,143,50,14
+END
+
+IDD_ABOUT_INFOCREDZ DIALOG DISCARDABLE  0, 0, 325, 207
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "&Info, Greetz and Credz"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_FADER_ABOUT,"PCP Fader Control",WS_TABSTOP,0,0,
+                    325,207
+END
+
+IDD_PRINT DIALOGEX 0, 0, 186, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Printing..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Cancel",IDCANCEL,67,58,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,50,172,1,
+                    WS_EX_STATICEDGE
+    CTEXT           "FileName",IDC_STATIC_FILENAME,7,24,172,8,SS_CENTERIMAGE
+    CTEXT           "PageCounter",IDC_STATIC_PAGE,7,35,172,8,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,11,172,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Printing",IDC_STATIC,79,7,24,8
+END
+
+IDD_CONFIG_MRU DIALOGEX 0, 0, 268, 169
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&MRU Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Recent Fi&les:",IDC_STATIC,7,112,45,8
+    EDITTEXT        IDC_EDIT_MRU_RECENTFILES,67,111,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_RD,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,58,111,9,14
+    LTEXT           "&Find:",IDC_STATIC,7,19,21,8
+    EDITTEXT        IDC_EDIT_MRU_FIND,67,17,25,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_PD,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,58,17,9,14
+    LTEXT           "&Replace:",IDC_STATIC,7,35,30,8
+    EDITTEXT        IDC_EDIT_MRU_REPLACE,67,33,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_REP,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,58,33,9,14
+    LTEXT           "Adv. &Open Path:",IDC_STATIC,7,51,54,8
+    EDITTEXT        IDC_EDIT_MRU_ADVANCEDOPEN_PATH,67,49,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_POP,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,59,48,9,14
+    LTEXT           "Adv. Open Fi&le:",IDC_STATIC,7,67,54,8
+    EDITTEXT        IDC_EDIT_MRU_ADVANCEDOPEN_FILE,67,65,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_POF,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,59,64,9,14
+    LTEXT           "Goto Line:",IDC_STATIC,7,83,34,8
+    EDITTEXT        IDC_EDIT_MRU_GOTO_LINES,67,81,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_GL,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,58,81,9,14
+    LTEXT           "F&avorite Files:",IDC_STATIC,7,143,54,8
+    EDITTEXT        IDC_EDIT_MRU_FAVORITE_FILES,67,141,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_FAV,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,59,141,9,14
+    LTEXT           "&Tcl Command:",IDC_STATIC,99,19,46,8
+    EDITTEXT        IDC_EDIT_MRU_TCLCMD,159,17,25,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_TC,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,150,17,9,14
+    LTEXT           "&Combo Boxes",IDC_STATIC,7,7,44,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,11,181,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Menus",IDC_STATIC,7,100,22,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,105,181,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "List&views",IDC_STATIC,7,130,36,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,135,181,1,
+                    WS_EX_STATICEDGE
+END
+
+IDD_CONFIG_GUI DIALOGEX 0, 0, 284, 159
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&GUI Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Background &Options",IDC_STATIC,169,46,108,49
+    CONTROL         "Use &Coolbar Background",IDC_CHECK_USEREBARBKGND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,174,56,95,10
+    CONTROL         "Use &MDI Background",IDC_CHECK_USEMDICLIENTBKGND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,174,67,85,10
+    CONTROL         "&Tile MDI Background",IDC_CHECK_TILEMDICLIENTBKGND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,174,78,83,10
+    LTEXT           "Rebar",IDC_STATIC,31,30,20,8
+    CONTROL         "",IDC_STATIC_REBARBMP,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE | SS_SUNKEN,14,40,63,
+                    51
+    LTEXT           "MDI",IDC_STATIC,116,30,14,8
+    CONTROL         "",IDC_STATIC_MDICLIENTBMP,"Static",SS_BITMAP | 
+                    SS_NOTIFY | SS_CENTERIMAGE | SS_REALSIZEIMAGE | 
+                    SS_SUNKEN,92,40,63,51
+    GROUPBOX        "Background &Images",IDC_STATIC,8,20,154,75
+    PUSHBUTTON      "Cu&stomize Toolbar",IDC_BUTTON_TBCUSTOMIZE,210,7,67,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,104,270,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Margin Cursor",IDC_STATIC,7,100,44,8
+    EDITTEXT        IDC_EDIT_MARGINCURSORFILE,7,112,214,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse",IDC_BUTTON_BROWSE,227,111,50,14
+END
+
+IDD_FAVORITES DIALOGEX 0, 0, 320, 172
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "Favorites"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,12,306,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Favorite Files",IDC_STATIC,7,8,42,8
+    CONTROL         "List1",IDC_LIST_FILES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_TABSTOP,7,20,243,
+                    118,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "&Open File",IDOK,255,24,58,14
+    PUSHBUTTON      "&Browse",IDC_BUTTON_ADDFILE,255,47,58,14
+    PUSHBUTTON      "&Add Active File",IDC_BUTTON_ADDACTIVE,255,65,58,14
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,255,83,58,14
+    PUSHBUTTON      "&Close",IDCANCEL,255,106,58,14
+    LTEXT           "File:",IDC_STATIC,7,155,16,8
+    EDITTEXT        IDC_EDIT_FILENAME,24,153,289,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,255,42,58,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,255,101,58,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,147,306,1,
+                    WS_EX_STATICEDGE
+END
+
+IDD_CONFIG_FILTER DIALOGEX 0, 0, 253, 159
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&Filter Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,11,183,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Filters",IDC_STATIC,7,7,19,8
+    LISTBOX         IDC_LIST_FILTERS,7,19,183,83,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,114,183,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Filter &Settings",IDC_STATIC,7,110,43,8
+    LTEXT           "&Display:",IDC_STATIC,17,122,26,8
+    EDITTEXT        IDC_EDIT_DISPLAY,45,120,145,12,ES_AUTOHSCROLL
+    LTEXT           "File &Types:",IDC_STATIC,7,138,35,8
+    EDITTEXT        IDC_EDIT_FILETYPES,45,135,145,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Add",IDC_BUTTON_ADD,196,19,50,14,WS_DISABLED
+    PUSHBUTTON      "&Delete",IDC_BUTTON_DELETE,196,36,50,14,WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,196,56,50,1,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "&Up",IDC_BUTTON_UP,196,62,50,14,WS_DISABLED
+    PUSHBUTTON      "&Down",IDC_BUTTON_DOWN,196,80,50,14,WS_DISABLED
+END
+
+IDD_GOTOLINE DIALOGEX 0, 0, 119, 14
+STYLE WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_COMBO_LINE,"ComboBoxEx32",CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP,0,0,46,80,WS_EX_LEFTSCROLLBAR
+    CONTROL         "&Extend Selection",IDC_CHECK_EXTENDSELECTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,51,3,68,10
+END
+
+IDD_CONFIG_ASSOCIATIONS DIALOGEX 0, 0, 253, 175
+STYLE DS_MODALFRAME | DS_CONTROL | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File &Associations"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,11,107,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Association Settings",IDC_STATIC,7,7,64,8
+    LTEXT           "&Extension:",IDC_STATIC,7,22,34,8
+    EDITTEXT        IDC_EDIT_FILEEXT,51,20,63,12,ES_AUTOHSCROLL
+    LTEXT           "&Description:",IDC_STATIC,7,38,38,8
+    EDITTEXT        IDC_EDIT_DESC,51,36,64,12,ES_AUTOHSCROLL
+    LTEXT           "&Command",IDC_STATIC,7,53,32,8
+    EDITTEXT        IDC_EDIT_COMMAND,51,52,64,12,ES_AUTOHSCROLL
+    LTEXT           "&Icon:",IDC_STATIC,7,74,17,9
+    ICON            IDI_MAIN,IDC_STATIC_ICON,51,68,20,20,SS_NOTIFY | 
+                    SS_SUNKEN
+    PUSHBUTTON      "&Add",IDC_BUTTON_ADD,7,94,50,14,WS_DISABLED
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,63,94,50,14,WS_DISABLED
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,127,11,109,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Associated &with SlackEdit",IDC_STATIC,127,7,82,8
+    LISTBOX         IDC_LIST_ASSOCIATED,127,20,109,88,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,120,20,1,88,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,120,228,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "SlackEdit Install Pat&h",IDC_STATIC,7,116,68,8
+    EDITTEXT        IDC_EDIT_INSTALLPATH,7,128,173,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse",IDC_BUTTON_BROWSE,186,127,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,150,228,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "&Other",IDC_STATIC,7,146,18,8
+    CONTROL         "Add '&SlackEdit Here!' to directory context menu",
+                    IDC_CHECK_SLACKEDITHERE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,157,163,10
+END
+
+IDD_WINDOWLIST DIALOGEX 0, 0, 277, 141
+STYLE DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Windows"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,9,11,205,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Select &Window(s)",IDC_STATIC,7,7,56,8
+    LISTBOX         IDC_LIST_WINDOWS,7,18,207,116,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&Activate",IDOK,220,17,50,14
+    PUSHBUTTON      "&Close",IDC_BUTTON_CLOSE,220,35,50,14
+    PUSHBUTTON      "&Save",IDC_BUTTON_SAVE,220,54,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,220,74,50,1,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "&Exit",IDCANCEL,220,80,50,14
+END
+
+IDD_ABOUT_GENERAL DIALOGEX 0, 0, 325, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "pcppopper",IDC_URL_EMAIL,"URLCtrl_Class",WS_TABSTOP | 
+                    0x1,168,114,59,10
+    RTEXT           "Code fuced up by:",IDC_STATIC,105,114,59,8
+    RTEXT           "Homepage not up at:",IDC_STATIC,97,129,68,8
+    CONTROL         "slackedit.sourceforge.net",IDC_URL_HOMEPAGE,
+                    "URLCtrl_Class",WS_TABSTOP | 0x1,168,128,59,10
+    RTEXT           "Major thanks to:",IDC_STATIC,99,142,65,8
+    CONTROL         "Mike Walter",IDC_URL_WALTER,"URLCtrl_Class",WS_TABSTOP | 
+                    0x1,168,142,59,10
+    LTEXT           "Build:",IDC_STATIC,148,185,18,8
+    EDITTEXT        IDC_EDIT_BUILDCOUNT,170,185,108,12,ES_READONLY | NOT 
+                    WS_BORDER
+    CONTROL         132,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
+                    SS_REALSIZEIMAGE,7,7,313,86
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,163,313,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,102,313,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "SlackEdit (a.k.a sled)",IDC_STATIC,129,99,68,8
+    LTEXT           "Build Information",IDC_STATIC,136,159,53,8
+    LTEXT           "Version:",IDC_STATIC,140,173,26,8
+    EDITTEXT        IDC_EDIT_VERSION,169,173,108,12,ES_READONLY | NOT 
+                    WS_BORDER
+END
+
+IDD_CONFIG_SCRIPTS DIALOGEX 0, 0, 310, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "&Script Files"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Tcl Install Path",IDC_STATIC,7,7,48,8,WS_DISABLED
+    EDITTEXT        IDC_EDIT_TCLPATH,7,18,228,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "&Browse",IDC_BUTTON_TCLBROWSE,245,17,50,14,WS_DISABLED
+    LTEXT           "Script &Path",IDC_STATIC,7,35,36,8
+    EDITTEXT        IDC_EDIT_SCRIPTPATH,7,46,228,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse",IDC_BUTTON_SCRIPTBROWSE,245,44,50,14
+    LTEXT           "&Script Files",IDC_STATIC,7,63,40,8
+    LISTBOX         IDC_LIST_SCRIPTS,7,75,228,133,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,
+                    WS_EX_ACCEPTFILES
+    PUSHBUTTON      "A&dd",IDC_BUTTON_ADD,245,75,50,14
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,245,94,50,14
+    PUSHBUTTON      "&Up",IDC_BUTTON_UP,245,123,50,14
+    PUSHBUTTON      "&Down",IDC_BUTTON_DOWN,245,140,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,55,12,239,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,43,39,251,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,46,67,249,1,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,242,116,58,1,
+                    WS_EX_STATICEDGE
+END
+
+IDD_OPENFILEDIALOG DIALOG DISCARDABLE  0, 0, 136, 16
+STYLE DS_NOFAILCREATE | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_LINEFEED,53,0,51,55,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Line Feed:",IDC_STATIC,5,2,34,8
+END
+
+IDD_CLIPBOOK DIALOG DISCARDABLE  0, 0, 122, 52
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_COMBO_CLIPFILES,"ComboBoxEx32",CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP,0,0,122,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ADVANCEDOPEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_FIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_CONFIG_WINDOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_CONFIG_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+    END
+
+    IDD_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_CONFIG_MRU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_CONFIG_GUI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 277
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_FAVORITES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_CONFIG_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 246
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_CONFIG_ASSOCIATIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 246
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_WINDOWLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_ABOUT_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_CONFIG_SCRIPTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SYSMENU             BITMAP  DISCARDABLE     "resources\\sysmenu.bmp"
+IDB_TOOLBAR             BITMAP  DISCARDABLE     "resources\\menubmp8.bmp"
+IDB_SLED_TITLE          BITMAP  DISCARDABLE     "resources\\sled_title.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ASCIIPIC
+//
+
+IDR_ABOUTASCII          ASCIIPIC DISCARDABLE    "resources\\SlackEdit.asc"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1117
+ PRODUCTVERSION 1,0,0,1117
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "da.box owns yor ass\0"
+            VALUE "CompanyName", "da.box\0"
+            VALUE "FileDescription", "SlackEdit - the latter version\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SlackEdit\0"
+            VALUE "LegalCopyright", "Copyright © 1999\0"
+            VALUE "OriginalFilename", "SlackEdit.exe\0"
+            VALUE "ProductName", "da.box SlackEdit\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILE_NEW            "Creates a new file"
+    IDM_FILE_OPEN           "Opens an existing file"
+    IDM_FILE_FAVORITEOPEN   "Opens a favorite file"
+    IDM_FILE_SAVE           "Saves the active file"
+    IDM_FILE_SAVEAS         "Saves the active file to another name"
+    IDM_FILE_SAVEALL        "Saves all open files"
+    IDM_FILE_PRINT          "Prints the active file"
+    IDM_FILE_CLOSE          "Closes SlackEdit (might not be killed)"
+    IDM_FILE_EXIT           "Exits SlackEdit (a definite kill)"
+    IDM_EDIT_UNDO           "Undoes the last performed action"
+    IDM_EDIT_REDO           "Redoes the previously undone action"
+    IDM_EDIT_CUT            "Copies selection to clipboard and deletes it"
+    IDM_EDIT_CUT_APPENDCUTTOCLIPBOARD "Appends cut text to text in clipboard"
+    IDM_EDIT_CUT_APPENDCLIPBOARDTOCUT "Appends text in clipboard to text cut"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_EDIT_COPY           "Copies the selection to clipboard"
+    IDM_EDIT_COPY_APPENDCOPYTOCLIPBOARD 
+                            "Appends copied text to text in clipboard"
+    IDM_EDIT_COPY_APPENDCLIPBOARDTOCOPY 
+                            "Appends current text in clipboard to text copied"
+    IDM_EDIT_PASTE          "Insert clipboard contents in active file"
+    IDM_EDIT_DELETE         "Deletes the current selection"
+    IDM_EDIT_SELECTALL      "Selects all text in file"
+    IDM_SEARCH_FIND         "Find text in active file"
+    IDM_SEARCH_FINDNEXT     "Find next occurence of last search"
+    IDM_SEARCH_REPLACE      "Find and replace text in active file"
+    IDM_VIEW_RUNDOSCOMMAND  "Runs a dos command with parameters"
+    IDM_VIEW_RUNWINSLOWSCOMMAND "Run a windows command/program"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_WINDOW_WINDOWLIST   "Displays the Window List Dialog."
+    IDM_VIEW_REBARITEMS_GOTOLINE "Move to a certain line"
+    IDM_VIEW_CHILDREN_CLIPBOOK "Toggles clipbook"
+    IDM_FILE_ADVANCEDOPEN   "Opens an existing file using an advanced Open-File-Dialog"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_OPTIONS_SETFONT     "Sets font to use for editing"
+    IDM_OPTIONS_SETTINGS    "Edit SlackEdit's settings"
+    IDM_WINDOW_CLOSE        "Close active window"
+    IDM_WINDOW_CLOSEALL     "Close all windows"
+    IDM_WINDOW_NEXT         "Activate the next window"
+    IDM_WINDOW_PREVIOUS     "Activate the previous window"
+    IDM_WINDOW_CASCADE      "Cascade windows"
+    IDM_WINDOW_TILEHORIZONTAL "Tile windows horizontally"
+    IDM_WINDOW_TILEVERTICAL "Tile windows vertically"
+    IDM_HELP_ABOUT          "Display SlackEdit's about dialog"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_RESTORE     "Restores the  window to a restored size ;)"
+    IDS_ERROR_ASSOCIATION_EXT "Please specify an extension..."
+    IDS_REBARTITLE_TOOLBAR  "Toolbar:"
+    IDS_REBARTITLE_QUICKSEARCH "Q-Search:"
+    IDS_FORMAT_GOTOLINE_LINEINDEXTOOLARGE 
+                            "That line does not exist. Please choose a line between 1 and %d."
+    IDS_MUTEXNAME           "SlackEdit by pcppopper Mothafucin Mutex"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FORMAT_SEARCH_FOUND_REGEXP 
+                            "Found the regular expression '%s' on line %d, column %d."
+    IDS_FORMAT_SEARCH_FOUND_STRING 
+                            "Found the string '%s' on line %d, column %d."
+    IDS_FORMAT_GENERIC_LIST_MENUITEM "&%d. %s"
+    IDS_TITLE_OPTIONSDIALOG "SlackEdit Options"
+    IDS_PASTERECENT         "Paste R&ecent"
+    IDS_FORMAT_PRINT_FAILED "Couldn't print '%s'."
+    IDS_STATUSBARPANE_READY "Whatever you do, don't press the button labeled F1!"
+    IDS_STATUSBARPANE_READONLY "READ"
+    IDS_STATUSBARPANE_INSERT "INS"
+    IDS_STATUSBARPANE_UNIX  "UNIX"
+    IDS_STATUSBARPANE_DOS   "DOS"
+    IDS_STATUSBARPANE_MAC   "MAC"
+    IDS_STATUSBARPANE_OVERWRITE "OVR"
+    IDS_FORMAT_FILE_ALREADYOPEN 
+                            "The file '%s' is already open. Would you like to reload it?"
+    IDS_FORMAT_FILE_MODIFIED 
+                            "The file '%s' has been modifed by another application. Would you like to reload it?"
+    IDS_FORMAT_FILE_DELETED "The file '%s' has been deleted by another application. You must save the file if you want to retain it. Would you like to do so now?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_REGISTERWINDOW "Couldn't register window"
+    IDS_ERROR_CREATEWINDOW  "Couldn't create window"
+    IDS_FORMAT_SEARCH_FAILED_STRING "The string '%s' could not be found."
+    IDS_FORMAT_SAVE_NOTSAVED 
+                            "You seem to have edited the contents of %s.\n Should the changes be saved?"
+    IDS_MENU_UNDO_FORMAT    "&Undo %s"
+    IDS_MENU_REDO_FORMAT    "&Redo %s"
+    IDS_MENU_UNDO_DEFAULT   "&Undo"
+    IDS_MENU_REDO_DEFAULT   "&Redo"
+    IDS_WINDOW_WINDOWLIST_MENUITEM "Window &List..."
+    IDS_INCREMENTALSEARCH_FAILING "Failing Incremental Search: %s"
+    IDS_INCREMENTALSEARCH_FORWARD "Forward Incremental Search: %s"
+    IDS_INCREMENTALSEARCH_REVERSE "Reverse Incremental Search: %s"
+    IDS_FORMAT_SEARCH_FAILED_REGEXP 
+                            "The regular expression '%s' could not be found."
+    IDS_FORMAT_SEARCH_WRAPPED_STRING 
+                            "Wrapped while searching for string '%s'."
+    IDS_FORMAT_SEARCH_WRAPPED_REGEXP 
+                            "Wrapped while searching for regular expression '%s'."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_MOVE        "Changes the windows position (You would never had guessed)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_SIZE        "Changes the size to fit your needs"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_MINIMIZE    "Minimizes the window (makes the window smaller in other words)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_MAXIMIZE    "Maximizes the window (makes the window larger in other words)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_CLOSE       "Kills the window and prompts for saving if needed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_SYSMENU_NEXT        "Activates the next mdi window (usually an open file)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_CLIPMENU_EDITCLIPFILE "Opens the clip File so it can be edited."
+    IDM_CLIPMENU_RELOADCLIPFILE "Reloads the clip File (for updates)."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILE_READONLY       "Toggles active file's read-only state"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILE_PAGESETUP      "Changes the page formatting settings"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FORMAT_ERROR_TCL_READONLY_VARIABLE_WRITE 
+                            "The script '%s' tried to write to the variable %s(%s)'.\n'%s(%s)' has been restored and '%s' should be edited."
+    IDS_FORMAT_ERROR_TCL_READONLY_VARIABLE_UNSET 
+                            "The script '%s' tried to unset the variable '%s'.\n'%s' has been restored and '%s' should be edited."
+    IDS_FORMAT_LOADTIMES    "LoadTimes: Libs: %d, Init: %d, Total: %d ms"
+    IDS_FORMAT_ERROR_RECENT_FILE_NONEXISTENT 
+                            "That file '%s' doesn't seem to exist anymore.\n\nYou can clear out all files that don't exist from the\n'Recent Files' menu by choosing the 'Clear Non-Existent' menu item."
+    IDS_FORMAT_EXCEPTION    "An exception has occured in this application.\nExecution may continue, but the error may persist\n\n\tor cause strange behavior. The following information\n\n\tmay be useful for the developer to debug the\n\n\tapplication, please send it to them.\n\n\t\n\n\thwnd = 0x%X (%d)\n\n\tuMsg = 0x%X (%d)\n\n\twParam = 0x%X (%d)\n\n\tlParam = 0x%X (%d)\n\n\tWindow Class = '%s'\n\n\tWindow Title = '%s'\n\n\t\n\n\tException Code = 0x%X (%d)\n\n\tException Flags = 0x%X (%d)\n\n\tAdditional Exceptions? %s\n\n\tAddress of Exception = 0x%X (%d)\n\n\tNumber of additional parameters = %d,\n"
+    IDS_FORMAT_TRACE_MEMORYLEAK 
+                            "Memory operation in %s, line %d: %s a %d-byte '%s' block (# %ld)\n"
+    IDS_ERROR_TCL_FAILEDTOLOAD 
+                            "Couldn't initialize Tcl, version 8.3 or greater. Try reinstalling Tcl."
+    IDS_FORMAT_ECP_LOADTIMES "ECP File Load Time: %d ms"
+    IDS_REBARTITLE_GOTOLINE "Goto Line:"
+    IDS_TITLE_OPENFILESDIALOG "Open File(s)"
+    IDS_TITLE_SAVEFILEASDIALOG "Save File As"
+    IDS_FORMAT_FILE_SAVE    "Saved %s for you."
+    IDS_TITLE_ABOUTDIALOG   "About SlackEdit"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Swedish resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
+#ifdef _WIN32
+LANGUAGE LANG_SWEDISH, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "slack_resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Swedish resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

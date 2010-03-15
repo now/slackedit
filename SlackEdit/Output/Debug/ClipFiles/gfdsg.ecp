@@ -1,0 +1,9 @@
+ClipbookTitle="HTML Tags2"
+ClipbookSort=FALSE
+
+ItemTitle=Body
+ItemBody="
+<body>
+^|
+</body>
+"

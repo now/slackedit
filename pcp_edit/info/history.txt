@@ -1,0 +1,28 @@
+pcp_edit History File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<change_type> (<date>): <change_description>
+
+where <change_type> is one of:
+
+(Note: The word 'Feature' has quite a loose meaning here)
+
++ - Added feature
+- - Removed features
+= - Changed feature
+% - Fixed feature
+* - Major event
+
+and <change_description> is a short or long
+description of what has been done.
+
+============= END FILE HEADER =============
+
++ (07/16/00): Stable line wrapping when end of line (pos 2050) reached. (TextBuffer_InsertLine, TextBuffer_AppendLine, and TextBuffer_InternalInsertText needed updating)
+% (07/16/00): Fixed a bug that made the last character of the longest line always visible while scrolling to the far right.
++ (07/16/00): Added PEM_GETOVERWRITEMODE and PEM_SETOVERWRITEMODE messages.
+% (07/06/00): Now Replacing text with a search is only one undo (was insert/delete).
+* (07/06/00): Added History File to project. A little late considering how much has been added and changed in this project so far.

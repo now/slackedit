@@ -1,0 +1,108 @@
+SlackEdit Todo File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<change_type> <change_description>
+
+where <change_type> is one of:
+
+(Note: The word 'Feature' has quite a loose meaning here)
+
++ - Feature to add
+- - Feature to remove
+= - Feature to change
+% - Feature to fix
+* - Major event
+# - Feature to look into
+?X - Feature to perhaps X (add/remove/change)
+
+and <change_description> is a short or long
+description of what has been done.
+
+============= END FILE HEADER =============
+
++ Project Manager (same window as clipbook (as msdev)) (in the making)
++ Internal Project Backup
++ More Subclassing (i.e. global font settings, better handling of menus, better accelerator handling)
++ Column Mode Editing
++ Configurable Menus
+?+ More Tooltips
++ More Command Line Options
++ ISpell Spelling Checker Plugin
++ File Comparison
++ Find/Replace in Files
++ menu Tcl Command
++ Font specifier in ECP files
++ Auto removal of auto indentation if line empty (as MSDEV does)
++ HexView (debug and file)
+?+ Tools
++ Treeview for clipbook
++ Help system
++ add support for --suffix? and --spanquote (for multi line quotes a la not C but easy to implement as hell)
++ ctags support
++ true gnu regexps?
++ get text from menu if not in resource on WM_MENUSELECT?
++ Drag 'n' Drop
++ Monitor the clip files and the tcl files for changes
+% Even Faster Loadtime =)
+% Make more code generic
+% Selection margin cursor won't stick...
+* Linux Port
+* Source comments
+- Useless code =P
++ window tcl command and stuff (file type and file name)
++ on tcl events, i.e. on clipboardchange, on edit, on save...
++ Click on statusbar items to toggle modes and stuff
++ Resize bands when resizing toolbar
++ Fix menu colors
+?+ IE Browser support
++ Context menu for mdiclient
++ better regexp searches
+* Make Object Oriented (C++)
+?- Paste Recent? (could be done with tcl quite easily
++ Tcl Array with SlackEdit settings
++ Ctrl+Up/Down should move items in list[view]s
++ Icons for systabctrls
++ Icons for windowbar, could be filetype (get from shell)
+?- Run Dos/Winslows Command (could be done with tcl quite easily)
+?% Should there only be one Tcl command line?
++ Split Windows
+?% Font selection in Options, or should it perhaps be language specific
+?+ A custom message to retrieve the LPEDITVIEW struct
++ Dockable Windows. Will this require C++? Might be possible without. Try to find examples
++ Options dialog control (a la winamp, but much more generic)
+% Use the Linked List code for regexps
++ Menu_SetIconHandle()
+# Tcl_PkgPresentEx()
++ improve Mem_ funcs for debugging purposes
+?% Remove Generic_ from MDI_Child functions
++ mdi_child_modified()
++ mdi_child_create()
++ Remote Edit function (requested by belial_)
++ 'Editable List'. A control that lets the user edit entries in a listbox. Like MSDEV has. A Toolbar for New, Delete, Move Up, Move Down, and when WM_LBUTTONDOWN over an item start a timer and check for mouseclick within that time then popup an edit window over it.
+% Fix all goddam EditView_ and TextView_ function names
+% Fix the interface of the EditView (for tcl command especially)
+?- Remove GotoLine rebar item. it's easy to just type slack::goto_line XXX in tcl command line
+?- Remove QuickSearch rebar item. it will be easy to just type slack::search XXX in tcl command line
++ slack::search tcl command
++ slack::goto_line tcl command
++ figure out a way to get the --disablechar/--enablechar to work with tcls { }. (Since they're also used to group stuff (if, for, and so on))
+% might want to move slack::clipboard monitor when we have events (i.e. on clipboardchange)
++ Configurable fonts everywhere
++ a plugin interface would be awesome...so that one could be without dialogs or config and such.
+% Asking to reload an open file should only be done if the file has been modified.
++ add a tcl debugger
++ create a com like interface for everything
+= rename file_interface.h functions
+= dockwindow menu needs fixing (check active docking)
+= clipbook cliplist combobox needs to be made taller
+= clipbook access trough tcl instead
+- remove append/prepend clipboard menu items
++ add tcl settings array
+% ::slack:: should become ::sled::
+% fix exception handling
+% fix default button in find dialog
++ find <-> replace mode-toggler
+% need to check syntax type for docs at startup after tcl loading is complete

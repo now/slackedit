@@ -1,0 +1,269 @@
+ClipbookTitle="HTML Tags"
+#ClipbookTclPhile=c:\My Documents\PhastPadScript.tcl
+ClipbookSort=FALSE
+
+ItemTitle="New Page"
+ItemBody="
+<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<html>\n<head>\n<title>New Document</title>\n<meta name=\"Generator\" content=\"SlackEdit\">\n<meta name=\"Author\" content=\"\">\n<meta name=\"Keywords\" content=\"\">\n<meta name=\"Description\" content=\"\">\n</head>\n\n<body bgcolor=\"#FFFFFF\">\n\n</body>\n</html>"
+
+ItemTitle=Anchor
+ItemBody="<a href=\"http://\">^|</a>"
+
+ItemTitle=Address
+ItemBody=<address>^|</address>
+
+ItemTitle=Applet
+ItemBody="<applet code=\"^|\" width=\"\" height=\"\">
+</applet>"
+
+ItemTitle=Area
+ItemBody="<area shape=\"^|\" href=\"\" coords=\"\" alt=\"\">
+
+ItemTitle=Base
+ItemBody="<base href=\"^|\">"
+
+ItemTitle=Big
+ItemBody=<big>^|</big>
+
+ItemTitle=Blockquote
+ItemBody=<blockquote>^|</blockquote>
+
+ItemTitle=Body
+ItemBody="
+<body>
+^|
+</body>
+"
+
+ItemTitle=Bold
+ItemBody=<b>^|</b>
+
+ItemTitle=Break
+ItemBody=<br>
+
+ItemTitle="Bulleted List"
+ItemBody="
+<ul>
+	<li>^|
+	<li>
+</ul>
+"
+
+ItemTitle=Caption
+ItemBody=<caption>^|</caption>
+
+ItemTitle=Center
+ItemBody=<center>^|</center>
+
+ItemTitle=Cite
+ItemBody=<cite>^|</cite>
+
+ItemTitle=Code
+ItemBody=<code>^|</code>
+
+ItemTitle=Comment
+ItemBody="<!-- ^| -->"
+
+ItemTitle=Dd
+ItemBody=<dd>
+
+ItemTitle=Dfn
+ItemBody=<dfn>^|</dfn>
+
+ItemTitle=Dir
+ItemBody=<dir>^|</dir>
+
+ItemTitle=Div
+ItemBody="<div align=\"\">^|</div>"
+
+ItemTitle=Dl
+ItemBody="
+<dl>
+	<dt>^|
+	<dd>
+</dl>
+"
+
+ItemTitle=DocType
+ItemBody="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">"
+
+ItemTitle=Dt
+ItemBody=<dt>
+
+ItemTitle=Em
+ItemBody=<em>^|</em>
+
+ItemTitle=Font
+ItemBody="<font size=\"\">^|</font>"
+
+ItemTitle=Form
+ItemBody="
+<form method=post action=\"\">
+^|
+</form>
+"
+
+ItemTitle="Heading 1"
+ItemBody=<h1>^|</h1>
+
+ItemTitle="Heading 2"
+ItemBody=<h2>^|</h2>
+
+ItemTitle="Heading 3"
+ItemBody=<h3>^|</h3>
+
+ItemTitle="Heading 4"
+ItemBody=<h4>^|</h4>
+
+ItemTitle="Heading 5"
+ItemBody=<h5>^|</h5>
+
+ItemTitle="Heading 6"
+ItemBody=<h6>^|</h6>
+
+ItemTitle=Head
+ItemBody="
+<head>
+^|
+</head>
+"
+
+ItemTitle=Html
+ItemBody="
+<html>
+^|
+</html>
+"
+
+ItemTitle=Image
+ItemBody="<img src=\"^|\" alt=\"\">"
+
+ItemTitle=Input
+ItemBody="<input type=\"^|\" name=\"\">"
+
+ItemTitle=IsIndex
+ItemBody=<isindex>
+
+ItemTitle=Italic
+ItemBody=<i>^|</i>
+
+ItemTitle=Kbd
+ItemBody=<kbd>^|</kbd>
+
+ItemTitle=Link
+ItemBody="<link rel=\"^|\" href=\"\">"
+
+ItemTitle="List Item"
+ItemBody="<li>^|"
+
+ItemTitle=Map
+ItemBody="<map name=\"^|\">
+</map>"
+
+ItemTitle=Menu
+ItemBody=<menu>^|</menu>
+
+ItemTitle=Meta
+ItemBody="<meta name=\"^|\" content=\"\">"
+
+ItemTitle="Numbered List"
+ItemBody="
+<ol>
+	<li>^|
+	<li>
+</ol>"
+
+ItemTitle=Option
+ItemBody=<option>^|</option>
+
+ItemTitle=Paragraph
+ItemBody=<p>^|</p>
+
+ItemTitle=Param
+ItemBody=<param name=\"^|\" value=\"\">"
+
+ItemTitle=Pre
+ItemBody=<pre>^|</pre>
+
+ItemTitle=Samp
+ItemBody=<samp>^|</samp>
+
+ItemTitle=Script
+ItemBody="
+<script language=\"JavaScript\">
+<!--
+^|
+//-->
+</script>"
+
+ItemTitle=Select
+ItemBody="<select name=\"\">^|</select>"
+
+ItemTitle=Small
+ItemBody=<small>^|</small>
+
+ItemTitle=Strike
+ItemBody=<strike>^|</strike>
+
+ItemTitle=Strong
+ItemBody=<strong>^|</strong>
+
+ItemTitle=Style
+ItemBody="<style type=\"text/css\" title=\"\">
+<!--
+	^|
+-->
+</style>"
+
+ItemTitle=Sub
+ItemBody=<sub>^|</sub>
+
+ItemTitle=Sup
+ItemBody=<sup>^|</sup>
+
+ItemTitle=Table
+ItemBody="<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
+	<tr>
+		<td>^|
+		</td>
+	</tr>
+</table>"
+
+ItemTitle=Td
+ItemBody="
+<td>^|
+</td>"
+
+ItemTitle=TextArea
+ItemBody="<textarea name=\"\" rows=\"\" cols=\"\">^|</textarea>"
+
+ItemTitle=TextFlow
+ItemBody=<textflow>^|</textflow>
+
+ItemTitle=Th
+ItemBody=<th>
+
+ItemTitle=Title
+ItemBody=<title>^|</title>
+
+ItemTitle=Tr
+ItemBody="
+<tr>
+	<td>^|
+	</td>
+</tr>"
+
+ItemTitle=Tt
+ItemBody=<tt>^|</tt>
+
+ItemTitle=Underline
+ItemBody=<u>^|</u>
+
+ItemTitle=Ul
+ItemBody="
+<ul>
+	^|
+</ul>"
+
+ItemTitle=Var
+ItemBody=<var>^|</var>

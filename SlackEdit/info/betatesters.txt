@@ -1,0 +1,30 @@
+SlackEdit Beta Testers File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<module> <name> <e-mail> <bugcount>
+
+where <module> is one of:
+
+# - Main Module
+* - Edit Module
+% - Generic Module
+& - Control Module
+
+and <bugcount> is a count of the number of
+bugs spotted by <name>.
+
+============= END FILE HEADER =============
+
+# Mayhem^	not@know.nu 0
+# ^ChAoS	not@know.nu 0
+# cTT		not@know.nu 0
+# CmdBeavis not@know.nu 0
+# Weazel--	not@know.nu 0
+# icecream- not@know.nu 0
+# fresh		not@know.nu 0
+# belial_	not@know.nu 0
+# _Bonkers_	not@know.nu 0
+# drano		not@know.nu 0

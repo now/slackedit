@@ -1,0 +1,27 @@
+pcp_generic History File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<change_type> (<date>): <change_description>
+
+where <change_type> is one of:
+
+(Note: The word 'Feature' has quite a loose meaning here)
+
++ - Added feature
+- - Removed features
+= - Changed feature
+% - Fixed feature
+* - Major event
+
+and <change_description> is a short or long
+description of what has been done.
+
+============= END FILE HEADER =============
+
+% (07/19/00): Fixed String_ProcessHotkey. Now much faster and smarter and extensive.
++ (07/06/00): Added hashtable functions. Mostly a rip from glib
++ (07/06/00): Added math functions Math_Clamp (from glib) and Math_ClosestPrime (from glib)
+* (07/06/00): Added History File to project. A little late considering how much has been added and changed in this project so far.

@@ -1,0 +1,253 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_PP_HAND             CURSOR  DISCARDABLE     "resources\\link.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CHECKBOX            BITMAP  DISCARDABLE     "resources\\402.bmp"
+IDB_MAIL                BITMAP  DISCARDABLE     "resources\\203.bmp"
+IDB_BULB                BITMAP  DISCARDABLE     "resources\\litebulb.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_BANDMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "BandMenu"
+    BEGIN
+        MENUITEM "&Left",                       IDM_BAND_LEFT
+        MENUITEM "&Right",                      IDM_BAND_RIGHT
+        MENUITEM "&Top",                        IDM_BAND_TOP
+        MENUITEM "&Bottom",                     IDM_BAND_BOTTOM
+        MENUITEM SEPARATOR
+        MENUITEM "&Close",                      IDM_BAND_CLOSE
+    END
+END
+
+IDR_URLMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "UrlMenu"
+    BEGIN
+        MENUITEM "&Open",                       IDM_URLMENU_OPEN
+        MENUITEM "&Edit",                       IDM_URLMENU_EDIT
+        MENUITEM "&Print",                      IDM_URLMENU_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy Shortcut",              IDM_URLMENU_COPYSHORTCUT
+        MENUITEM SEPARATOR
+        MENUITEM "Add To &Favorites",           IDM_URLMENU_ADDTOFAVORITES
+        MENUITEM "Add To &Desktop",             IDM_URLMENU_ADDTODESKTOP
+        MENUITEM SEPARATOR
+        MENUITEM "&Properties",                 IDM_URLMENU_PROPERTIES
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "da.box\0"
+            VALUE "FileDescription", "pcp controls library, includes band control, url control, o.d. menus, and some paint funcs\0"
+            VALUE "FileVersion", "1, 0, 0, 0\0"
+            VALUE "InternalName", "pcp_controls\0"
+            VALUE "LegalCopyright", "Copyright © 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "pcp_controls.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "da.box pcp_controls\0"
+            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_URLPROPERTIES DIALOG DISCARDABLE  0, 0, 207, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_URL_PROPERTIES,IDC_STATIC,7,7,21,20
+    EDITTEXT        IDC_URL_DESCRIPTION,44,14,156,25,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | NOT 
+                    WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,44,193,1
+    LTEXT           "Address (URL):",IDC_URL_PROMPT,7,60,28,24
+    EDITTEXT        IDC_URL_URL,44,63,156,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER | NOT WS_TABSTOP
+END
+
+IDD_TIPOFDAY DIALOG DISCARDABLE  40, 30, 279, 157
+STYLE DS_ABSALIGN | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Tip of da Day"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC_FRAME,"Static",SS_GRAYFRAME,8,8,264,121
+    CONTROL         "",IDC_BMP_BULB,"Static",SS_BITMAP | NOT WS_VISIBLE,13,
+                    15,20,20
+    LTEXT           "Tip Box\nLoads of tips will\nbe mapped from here\nfantastic right?",
+                    IDC_TXT_TIPSTRING,50,56,199,59,NOT WS_VISIBLE
+    CONTROL         "&Show tips on startup",IDC_CHK_STARTUP,"Button",
+                    BS_AUTOCHECKBOX | BS_TOP | WS_TABSTOP,8,138,79,9
+    PUSHBUTTON      "&Next tip",IDOK,167,136,50,14
+    DEFPUSHBUTTON   "&Close",IDCANCEL,221,136,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_URLPROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_URL_PROPERTIES      ICON    DISCARDABLE     "resources\\url.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_URLSHEETTITLE       "Url Properties"
+    IDS_TIP_DIDYOU          "I bet you knew..."
+    IDS_TIPFILE_CORRUPT     "The Tip-of-da-Day File is corrupt"
+    IDS_TIPFILE_NOTFOUND    "The Tip-of-da-Day File could not be found"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Swedish resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SVE)
+#ifdef _WIN32
+LANGUAGE LANG_SWEDISH, SUBLANG_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Swedish resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

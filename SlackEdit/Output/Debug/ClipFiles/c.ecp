@@ -1,0 +1,5 @@
+ClipbookTitle="c quicky stuff"
+ClipbookSort=TRUE
+
+ItemTitle="Comment out selection"
+ItemBody=/* ^s */

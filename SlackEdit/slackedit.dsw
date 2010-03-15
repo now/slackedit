@@ -1,0 +1,104 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "SlackEdit"=".\SlackEdit.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name pcp_controls
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name pcp_generic
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name pcp_edit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name pcp_paint
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "pcp_controls"="..\pcp_controls\pcp_controls.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name pcp_generic
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name pcp_paint
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "pcp_edit"="..\pcp_edit\pcp_edit.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name pcp_generic
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name pcp_paint
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "pcp_generic"="..\pcp_generic\pcp_generic.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "pcp_paint"="..\pcp_paint\pcp_paint.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name pcp_generic
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

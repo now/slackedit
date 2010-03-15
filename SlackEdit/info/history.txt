@@ -1,0 +1,204 @@
+SlackEdit History File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<change_type> (<date>): <change_description>
+
+where <change_type> is one of:
+
+(Note: The word 'Feature' has quite a loose meaning here)
+
++ - Added feature
+- - Removed features
+= - Changed feature
+% - Fixed feature
+* - Major event
+
+and <change_description> is a short or long
+description of what has been done.
+
+============= END FILE HEADER =============
+
+% (07/25/00): Hopefully fixed a long standing bug with the about dialog which occured when switching tabs.
++ (07/23/00): Added a nice picture to the about dialog; ain't it pretty? Also added some more build info to the about dialog.
+% (07/22/00): Fixed some bugs that prevented replacing in selection from working correctly.
+% (07/21/00): Fixed some issues with the clipbook.
++ (07/20/00): Toggling the Read Only attribute for a file now actually sets the Read Only for the file on disk as well, as to allow it to be saved.
+% (07/20/00): The clipbook is now functional again.
+% (07/19/00): The rebar code was cleaned up quite a bit. (now faster =).
++ (07/19/00): Added non-functional Tcl tracing of Slackedit defined variables. Seems that Tcl_TraceVar/Tcl_TraceVar2 doesn't work with namespaces or something.
+* (07/19/00): Finally moved back to using Tcl Stubs after realizing that Windows Millennium doesn't have a 'Known Dlls lookup table'.
++ (07/19/00): Added [-n] option to slack::hotkey to disable adding a hotkey description to the commands menu item. (Used in conjunction with [-c]).
+% (07/18/00): Large clean sweep of the resources.
++ (07/18/00): Added a better window listing in the Window menu.
+% (07/17/00): Fixed a bug in the Save All routine.
++ (07/16/00): Added a -c option to slack::hotkey. It allows for totally customizable hotkeys for menu items and other commands that effect SlackEdit. Seriously cool.
+% (07/16/00): Fixed a bug that prevented rebar items from showing correctly.
++ (07/16/00): Opening an already open file now focuses that window and ask's to reload it.
+* (07/16/00): SlackEdit Beta 3 released. Loadtime has been cut anormously for some reason. 4 secs -> 1 sec. Unexplicable.
+% (07/14/00): Fixed a bug that made mdi windows become really small in certain situations.
+% (07/12/00): Fixed a bug that prevented the margin cursor from showing.
++ (07/12/00): Searches now display info in the statusbar (Found string on line X, column Y.)
++ (07/12/00): Searches now finally manage to warn if the search couldn't be found in any more places or if it wrapped.
+* (07/12/00): Been restructuring the source the last 4 days.
+% (07/08/00): Made some code more fail safe.
+% (07/08/00): Fixed some resource leaks in the options handling.
+* (07/08/00): Now all history for a specific module is stored in the respective modules history.txt file. If you want info on changes to a module, check its history.txt file. That means that this file will only pack info about the main module from now on.
+% (07/08/00): Fixed some bugs that could potentially make the main menu look weird.
+% (07/08/00): Fixed some bugs with Menu_DestroyMenu that would occur if the menu item's type wasn't a string.
+= (07/06/00): The About Fade Control now runs a lot better and is more customizable (programmatically that is).
+= (07/06/00): Now using Tcl Objects in even more places...should make it a whole lot faster, especially for the slack::dialog command.
++ (07/06/00): Added a separator between the mdi window menu items and the windowlist menu item.
+= (07/06/00): slack::hotkey now uses a hashtable lookup which should make it faster if you have many hotkeys set.
++ (07/06/00): Added the slack::clipboard monitor <id> [script] command. Can be very useful for perverse tasks.
+% (07/05/00): Fixed a lot of memory leaks that existed thanks to various linked lists.
++ (07/05/00): If 'Escape' is pressed in the QuickSearch comboboxex, the active mdichild recieves focus.
+% (07/04/00): Fixed the QuickSearch rebar item so that it performs a search when you tell it to =).
+% (07/04/00): Fixed a bug that prevented Incremental Searching in some cases.
+% (07/04/00): Fixed a bug that prevented searches from finding one character long strings closest to the starting position.
+% (07/04/00): Fixed a bug that prevented Reverse Incremental Search from working correctly.
++ (07/04/00): Added ability to press 'Delete' while in an incremental search to delete the last typed character.
+% (07/04/00): Fixed a bug that prevented backspace from being used to delete the last typed character in an incremental search.
+% (07/04/00): Fixed a devious wrap search bug (when searching backwards/up).
+% (07/04/00): Fixed more bugs that prevented any Previous searches from taking place correctly.
+% (07/04/00): Fixed a bug that prevented QuickFind Previous. (Actually the code to enable this had been completely forgotten). 
++ (07/04/00): Find Next/Previous now warns if no more items could be found.
+% (07/04/00): Fixed a bug that would make searched for text uppercase if the search was case insentive. (This should only have been done internally).
+% (07/03/00): Fixed some problems with the QuickFind menu items. They were grayed when they weren't supposed to
++ (07/03/00): The Find dialog now uses the current selection for its default search text (the text is put in the combobox) if it contains non-whitespace characters. If there is no selection or if it only contains whitespace characters the last used search string will be selected instead.
++ (07/03/00): Added ability to disable/enable wrapping of searches in the Find dialog.
+% (07/03/00): Fixed a bug that would allow setting Whole Word Only searches when using regular expressions.
+% (07/03/00): Fixed a lot of searching bugs. Everything should work now. Before this regular expressions, Previous/Next in Up or Down direction wouldn't work. Also the Find Previous hotkey (Shift+F3) now works.
+% (07/03/00): Fixed a bug that prevented the quicksearch and gotoline rebar items from being toggled correctly.
++ (07/03/00): Added --disablechar and --enablechar options to the slack::syntax tcl function. They set characters that disable/enable syntax hiliting. In Tcl this would correspond to the '{', '}' characters. However, this will not work for tcl since it uses the '{' and '}' characters for so much more that just that function.
++ (07/03/00): Added the --prefixesinstrings option to the slack::syntax tcl function. Sets a boolean value that defines if prefixed variables may appear inside strings ("") (a la tcl).
+% (07/03/00): Fixed the slack::get_sel command. It wouldn't produce a tcl list like it was supposed to. Now also uses Tcl Objects for improved(?) performance =).
+% (07/02/00): The 'Clear Non-Existent' command in the Recent Files menu now actually updates the menu.
+% (07/02/00): Updated some update menu item state code in main module.
+= (07/02/00): Moved out goto-line code to pcp_edit.dll from main module.
++ (07/02/00): Added the ability to clean up the Recent Files menu.
+% (07/02/00): Fixed a bug that would allow you to open directories and other nasty stuff =).
++ (07/02/00): Added feature to only reload last open files if no command line arguments were specified.
+% (07/02/00): File monitoring events now activate the file concerned.
+% (07/02/00): Fixed some menu items that weren't toggled corectly between grayed (disabled and enabled (bookmark menu items to be specific).
+% (07/02/00): Fixed a bug that prevented Recent Files from being opened. It seems a '_' sneaked its way into the source and disrupted the mru reading of that particular mru list.
+% (07/02/00): Fixed a few bugs with the favorites dialog. The menu wouldn't work. A messagebox would pop up whe it wasn't supposed to. An edit control wasn't selectable. Files that where already in the list could be added again.
+% (07/02/00): Some bugs with the ownerdrawn menus
++ (07/02/00): Added radio item image for radiomenuitems.
+% (07/01/00): Fixed some menu infotips (the text that's displayed in the statusbar and in toolbar tooltips).
+= (06/26/00): Moved some code from pcp_controls to the main module. It should have always been there (now uses a callback function).
+% (06/27/00): Trimmed off some source by using a generic windowproc for the Options dialog.
+% (06/27/00): Fixed a bug that would enable using backup-directory even if no directory was set.
++ (06/26/00): Added feature to only reload last open files if SlackEdit exited smoothly.
+% (06/26/00): Fixed some bugs with the statusbar handling.
+% (06/26/00): Fixed some bug that prevented toolbar buttons from being toggled correctly when their respective childwindow was or was not active.
++ (06/26/00): Added ability to toggle statusbar and windowbar childwindows.
+% (06/25/00): Fixed a bug that prevented the QuickSearch rebar item from being deleted correctly.
+% (06/24/00): Cleaned up some source code.
+% (06/24/00): Fixed some menu mnemonics. This forced 'Fast Open' to be renamed to 'Advanced Open' (which actually fits better).
+% (06/24/00): Restructured the 'View' submenu. Some keyboard shortcuts got changed in the process.
++ (06/24/00): The URLControl's menu now has a default item ('Open').
+% (06/24/00): Fixed a bug with the URLControl. The 'Add To Desktop' menu item would also pop-up the Properties dialog.
+% (06/24/00): Fixed a serious bug that would prevent correct parsing of file-notification data if two items (files) where located in the same directory.
++ (06/22/00): Added ability to show/hide toolbar and search combo in rebar window.
+% (06/22/00): Fixed a bug that prevented rebarbands from being removed
+% (06/22/00): Fixed a bug that prevented a user to set the font if no files were open.
+% (06/22/00): Fixed a bug that would prevent opening more than one file from a root directory.
+% (06/22/00): Fixed a bug that would prevent opening files if no other files where open.
+% (06/22/00): Fixed a bug with removing files from the file-notification-list.
+% (06/22/00): Fixed a very serious bug with the syntax definitions list. Since Tcl is loaded in a separate thread and it adds definitions to this list (with the 'syntax' command) SlackEdit would sometimes crash if a definitions was added before the main thread had managed to create the syntax definition list.
+% (06/22/00): Fixed a bug with the popupmen in the windowbar (the 'Next' menu item's icon wasn't being displayed right).
+% (06/22/00): Blinking menu items when switching and closing windows should now have been fixed
++ (06/22/00): Added a statusbarpane, READ. Shows the readonly state of the active file.
+% (06/22/00): Fixed a vouple of bugs with displaying of active line-feed mode in menus adn statusbar.
+% (06/22/00): Fixed a bug with Paste Recent. If there existed no slackedit.clp file to read from it wouldn't create a submenu for later use.
+% (06/22/00): Fixed a bug that prevented SlackEdit from closing down.
+% (06/22/00): Fixed a bug with syntax definitions. The defaults for stringchar and charchar were transposed, i.e. stringchar = '\'' and charchar = '\"'.
+= (06/20/00): Added a lot of menu icons, and thus a lot of toolbar items. Also changed a lot of the older icon graphics. 
+% (06/20/00): Fixed history.txt FILE HEADER. Some information was wrong.
+* (06/20/00): Project active again! At rest because of school.
++ (02/17/00): Hex Edit Control more or less done. Fixed lots of scrolling issues and painting issues.
++ (02/16/00): Cleaned up the Hex Edit Control a lot, fixed a lot of scrollbar issues. (A 14 day (almost) break in coding due to sickness btw)
++ (02/01/00): Finished Hex Edit Control, in private beta testing stage right now
++ (01/29/00): Beta 2 Released to the general non-public
+% (01/29/00): Fixed loads of window placement and sizing issues
++ (01/29/00): Fixed allowable alignments for the band controls
+% (01/29/00): Fixed saving of window pos if maximized
++ (01/29/00): Ctrl+T to actually show the tip-of-da-day dialog
+% (01/29/00): Even nicer icons for the menus and toolbars
+% (01/29/00): Margin icons weren't being shown right
+% (01/29/00): All WM_COMMAND's sent to the edit control were being misinterpreted
++ (01/29/00): Selectable cursor for selmargin
++ (01/27/00): Output window added
+% (01/27/00): Moved out the edit control to it's own dll
+% (01/26/00): Fixed a really nasty bug that would crash SlackEdit when you opened a file
+% (01/25/00): Fixed dos piping error
+% (01/25/00): Delta values of about dialog...they were way to fast (only i could read it (since i knew what it said  =))
++ (01/25/00): Output window
+* (01/24/00): SlackEdit Beta 1 out
+* (01/24/00): Passed 30000 line barrier and the 50 meg barrier too =)...this after tipping out lots of code so it has most likely been quite a bit over 30000 lines at some stage
+= (01/24/00): Moved out the edit control to it's own dll...faster compiles this way (i think =P)..and it just makes everything more tidy =)
+= (01/24/00): Started verbose History (added date)
+- General cleansweep on the code...
+- Even more code...my /unused/ dir is getting bigger and bigger (10000 lines of code in there now =)
+% PH -> F, Ph -> F, ph -> f everywhere...
+% Fixed a line storage bug
+% Temporary files are stored in the subdirectory 'User' now...(tidier)
+% Removed all macro code until i find a reason to have it in
+% Finally figured out why the syntax definitions where screwing up at times...
+% Disabled dialog hooks for now (until qdcm is updated (the dialog redrew wrong))
++ Open/Save dialog hooks
+% QuickOpen dialog errors in filename and path parsing...
+% _beginthreadex() calls now instead of CreateThread() calls everywhere...(whoops...)
++ Ctrl+Delete to delete a word to the right
++ Ctrl+Backspace to delete a word to the left
+% Loads of boring bugs...
++ Auto Save Directory and Backup Directory to store the files where you want them
+% Made Auto Save changes and Backup changes
+% Fixed some UNICODE stuff that could mess up memory allocation and probably cause a crash =\
+% Made a filter settings dialog i can be proud of...(all beta testers should know what i mean =)
+% Fixed some bugs in the window list dialog
+% Fixed some critical section problems in the syntax definitions processing
++ Registered File Extensions Checking/Enumerating (sweet...)
++ clipboard tcl command to manipulate the windows clipboard. sweet.
+% Fixed even more menu bugs
++ scroll line a bit when end of line reached (i.e. screen)
+% Fixed some more menu stuff (it's never gonna be right)
+% Fixed bug in tip file loading
+% Fixed bug that would occur if there where no clip philes and the clipbook was running
+% In conjunction with the above, i realized that trying to edit the clip file (from the context menu of the clipbook wouldn't work either. In fact, it would crash SlackEdit =\)
++ Window List Dialog for displaying currently open windows
+% Fixed Redo menu item...the action wouldn't be displayed
++ Added toggling of selection or CharSelection as MSDEV calls it. Press 'F8' to try it out. It allows you to select text the normal way without being forced to hold down 'Shift' while doing so
+% Hopefully fixed a bug that would screw up syntax definitions (forgot to add a critical section, all thread synchronization should be ok now)
+% Fixed a nasty (again) bug that wouldn't allow you to load files of unknown type...(real nasty if you ask me)
+% Made tcl code use Objects and also put all SlackEdit specific commands in their own namesspace (::slack::). This should both make tcl code run faster and under better protection
+% Fading about intervales made bigger...so one has a chance to read it =)
+% Made some code faster and fixed a bug where the file extensions for syntax hiliting could be misinterpreted
++ Syntax keyword --prefix (--suffix when i actually have proof of some language silly enough to use such a feature)
++ CRLF Mode switching and displaying
+% Some GDI drawing problems (due to weird behavior of the GDI)
++ Notify on File Changes
++ ESC in clipbook window (to go back to editing)
+% UrlCtrl now has Property sheet and menu commands are working
+% Bugs in Match Brace code
++ Syntax keywords --indentstrings and --unindentstrings to set words/chars that increase or decrease indentation.
++ Tip-of-da-Day Dialog
+% Fixed some very irritating bugs in line drawing.
+% Fixed some problems in line parsing. Some nasty tricks could fool the parser into thinking legal code wasn't at all legal
++ Syntax keywords --commentcolumn (for tcl) and --lineendchar (i.e. ; for c and tcl) --linecontinuationchar (i.e. \ for c and tcl)
+% Fixed some menu handling but still not satisfactory
+% Made painting of lines 1900% faster =). (i swear by these numbers =P)
+% Fixed MRU saving for replace all
+% Fixed some terrible bugs in replace all, and in the general find function
+% There could be a potential error while calculating the number of tabs to insert when replacing spaces with tabs on tab-keypress
++ Edit->Goto Last Change - Sets the cursor/caret at the last change in the text. (Thanks to Sven Wiegand for the idea/code)
++ INS/OVR toggling with the 'Ins' key and visual display in statusbar of state
++ Phile->Read Only - Added for toggling read only of active file
+= Moved systray code to pcp_generic.dll
+- Some useless code =)
+
+Version 0.00 (01/01/00):
+* First Public Release

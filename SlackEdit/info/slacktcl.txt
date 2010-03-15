@@ -1,0 +1,513 @@
+SlackEdit Tcl Scripting Info File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	proc <params>
+
+Optional params are inside [], Required params are
+inside <>. When there is a choice between options in
+a param they are divided by |. Note that for some
+commands | may be a part of the param, so some
+consideration on what it is in each case may be required.
+(it should be explained in the description if it isn't an
+option divider.)
+
+============= END FILE HEADER =============
+
+procs:
+
+name
+
+load - load files into tcl interpreter
+
+synopsis
+
+	load [filename]
+
+description
+
+loads a file so that it can be used by SlackEdit. returns 1 on success and 0
+on failure. failure is in 99.9% of the cases due to [filename] not existing or
+containing non-valid tcl code. if [filename] is omitted, a Open File dialog
+will be display, so that you can choose what file to load from disc.
+
+name
+
+unload - unloads a file and everything belonging to it
+
+synopsis
+
+	unload <filename>
+
+description
+
+unloads a file so that it can't be used by SlackEdit. returns 1 on success and 0
+on failure. failure is in most cases due to	the file not being loaded in the
+first place.
+
+name
+
+hotkey - sets up a keyboard hotkey for tcl commands
+
+synopsis
+
+	hotkey [-c] [-n] <[<<ctrl|control>|alt|shift>+]key> <script|command_value>
+
+description
+
+if -c is omitted, then executes <script> when <key> is pressed.
+if -c is specified, then the command described by command_value is sent to
+SlackEdit. Look at the description for the 'cmds' array in the variables
+section.
+if -n is specified and -c is also specified then no description for <key> will
+be added to its menu item. (can be useful if you have many keys for the same
+command and don't want to clutter the menus).
+
+[ctrl|control], [alt], [shift] can be prepended to <key> to force these keys
+to be pressed simultaneously with <key>.
+examples:
+	ctrl+k
+	ctrl+shift+n
+	alt+ctrl+s
+
+<key> can have the single value of:
+	backspace, tab, clear, return, enter, escape
+	prior, page_up (the same)
+	next, page_down (the same)
+	end, home, left, up, right, down, select, print, execute
+	snapshot, print_screen (the same)
+	insert, ins (the same)
+	delete, del (the same)
+	help
+	0-9
+	a-z, A-Z (the same)
+	numpad0-numpad9
+	multiply, * (the same)
+	add, + (the same)
+	subtract, - (the same)
+	decimal, (what a weird name for it, on my keyboard it produces a dot)
+	divide, / (the same)
+	F1-F24
+	numlock, num_lock (the same)
+	scroll, scroll_lock (the same)
+
+returns 1 on success and 0 on failure. failure is in most cases due to illegal
+keys, alt. key combinations, being passed.
+
+name
+
+replace_sel - replace the current selection in a file
+
+synopsis
+
+	replace_sel <text>
+
+description
+
+replaces the current selection of the active edit window with <text>.
+
+name
+
+get_sel_text - returns the currently selected text in a file
+
+synopsis
+
+	get_sel_text
+
+description
+
+get_sel_text returns the current selection of the active file.
+Note: this can of course be empty if there is no selection, or if there is no
+active file.
+
+name
+
+set_sel - sets the selection in the active file
+
+synopsis
+
+	set_sel <startpos> <endpos>
+
+description
+
+sets the selection of the active file between <startpos> and <endpos>.
+<endpos> may have the value -1 to specify the last character of the edit window.
+in all other cases if <startpos> is larger than <endpos> the two values
+will be transposed.
+
+name
+
+get_sel - returns the current selection of the active file
+
+synopsis
+
+	get_sel
+	
+description
+
+get_sel returns a list with the current selection in it.
+the list will have the structure <startpos> <endpos> which will describe
+the points of the selection (of course).
+
+name
+
+get_filename - returns the currently active file's name
+
+synopsis
+
+	get_filename
+
+description
+
+get_filename returns the filename of the file currently being edited.
+(the possibilities are endless (file uploading and whatnot)).
+
+name
+
+get_linecount - returns the number of lines in the active file
+
+synopsis
+
+	get_linecount
+
+description
+
+get_linecount returns the number of lines in the active file.
+
+name
+
+get_linelength - returns the length of a line
+
+synopsis
+
+	get_linelength <lineindex>
+
+description
+
+get_linelength returns the length of line with <lineindex> as it's index
+(i.e. the 0-based line from the top).
+
+name
+
+shlexec - execute a command throught the shell (windows)
+
+synopsis
+
+	shlexec	[-v <verb>]	[-p <parms>] [-d <directory>] [-s <showstyle>] <file>
+
+description
+
+if -v is specified <verb> must be one of
+	open, explore, print, or *any*.
+open opens <file>. In what way is determined by Windows.
+print er...prints <file>.
+explore opens the folder <file>.
+*any* determines in what way <file> is opened by checking the registry.
+if -p is specified <params> will be <file>'s command line.
+if -d is specified <file> will be opened in <directory> (<file>'s active
+directory).
+if -s is specified <file> will be opened with <showstyle>.
+<showstyle> may be one of
+	hi[de], ma[x], mi[n], no[rm].
+hi[de] hides the <file>'s window.
+ma[x] maximizes <file>'s window.
+mi[n] minimizes the window creared by <file>.
+no[rm] shows the window with the default style.
+<file> must always be the last param, but the other may be in any order.
+Thanks to DaveG for the first source of this command.
+
+name
+
+dialog - creates a dynamic dialog
+
+synopsis
+
+dialog	[-t title] <width> <height>	<dialogitems>
+
+description
+
+dialog returns a list which first item contains	the name of the dialogitem and
+which second item contains its value (which is nothing if the dialog was
+'canceled'.
+if -t is specified <title> will be the dialogs title.
+<width> is the width in	pixels of the dialog.
+<height> is the	height in pixels of the dialog.
+<dialogitems> is a list of lists that should be structured as follows:
+	{<type> [<options>] <id> <x> <y> <width> <height> [<value>]}.
+<type> may be one of
+	combo, label, edit, or check.
+combo is a combobox. the return	value for such a control is the item selected or
+it's index if -s is specified.
+<options> include
+	[-x] - toggles on 'extended user-interface'
+	[-e] - uses a dropdown combobox instead of the default dropdownlist.
+	[-s <index>] - sets the combos selected index to <index>.
+				   Will also make the return value contain the selected index.
+	[<value>] - a list of values to be put in the combobox's listbox.
+label is a static label (text).
+<options> include
+	[-c] - centers the text in the control.
+	[<value>] - <value> is the text you want the label to display.
+check is a checkbox. it returns 0 if unselected and 1 if selected.
+<options> include
+	[-v <boolean>] - if <boolean> is 1,on,yes, or true the checkbox will start
+						checked. else if it is 0,off,no, or false the checkbox
+						will start unchecked.
+edit is an edit control. its return value is its text.
+<options> include
+	[<value>] - the text to start with.
+<id> - the text id for the control. this can later be used to indentify a
+control in the returned list.
+<x> - the x pos of the control. measured in dialog units (relative to every
+individual screen).
+<y> - the y pos of the control. measured in	dialog units (relative to every
+individual screen).
+<width> - the width of the control. measured in dialog units.
+<height> - the height of the control. measured in dialog units.
+[<value>] - depends on the control type. read above info.
+
+name
+
+msgbox - displays a messagebox that gives the user some options
+
+synopsis
+
+msgbox [-b <buttons>] [-i <icon>] [-t <title>] <message>
+
+description
+
+[-b <buttons>] - <buttons> may be
+	abort_retry_ignore, ok, ok_cancel, retry_cancel, yes_no, or yes_no_cancel.
+[-i <icon>] - <icon> may be
+	exclamation, info, question, stop, or 0.
+Default is 0 (no icon).
+[-t <title>] - <title> will be the messagebox's title.
+<message> - the message to display.
+<message> must be the last param. msgbox returns the name of the button pressed.
+one of
+	yes, no, cancel, retry, ignore.
+
+name
+
+browse - browse for a file, directory, printer, or computer
+
+synopsis
+
+browse	<file|path> [-t <title>] [-f <filter>] [-d <directory>] [-M] [-n] [-s]
+		[-c] [-p]
+	
+description
+
+the first param must eiter be
+	phile or path.
+file opens a 'browse-for-file' dialog.
+[-M] is valid for this option and toggles on the multi-select option.
+[-n] toggles on the network button.
+[-s] toggles on the save dialog instead of the default open dialog.
+[-f <filter>] - filters look like
+	'All Files (*.*)|*.*'
+where the '|' divides the title and the value of the filter.
+valid for the path option are
+[-c] - browse for computer.
+[-p] - browse for printer.
+common options for both are
+[-t <title>] - sets the title for the dialog.
+[d <directory>] - sets the default directory. this will open the dialog
+with <directory as the directory selected or displayed.
+the return value is either the selected directory or the selected file.
+if [-M] is specified for the <file> option the return value is a list of files.
+
+name
+
+open_file - opens a file for editing
+
+synopsis
+
+	open_file <filename>
+
+description
+	
+opens the file <filename> in the editor.
+
+name
+
+set_cookie - stores a value for the script
+
+synopsis
+
+	set_cookie	<name> <value>
+
+description
+
+stores the <value> in the key <name> in the registry.
+
+name
+
+get_cookie - retrieves a stored value
+
+synopsis
+
+	get_cookie <name>
+
+description
+	
+get_cookie returns the value of the key <name> in the registry.
+
+name
+
+clipboard - manipulate the windows clipboard contents
+
+synopsis
+
+	clipboard <get_text|set_text|monitor> [text]|<id> [script]
+
+description
+
+the clipboard function manipulates the contents of the windows clipboard. Only
+textual contents is supported, so don't pass it some alien data or windows might
+make a boo boo. for both <get_text> and <set_text> the return value is the
+contents of the clipboard, i.e. for <set_text> it returns the previous contents.
+[text] is only dealt with if <set_text> is used, and in which case it must be
+included.
+the monitor sub function is used to monitor for changes in the clipboard contents.
+this can for example be used to keep a history of the contents of the clipboard.
+<id> is a numerical value used as an identifier of the monitor and is used when
+destroying/creating/changing a monitor. [script] is passed if you want to create
+or change a monitor. if the monitor <id> already exists the new [script] will be
+used. if [script] is omitted, the monitor <id> is destroyed.
+
+name
+
+syntax - sets up options for syntax hiliting in the editor
+
+synopsis
+
+	syntax <--name <name>> <--extentions <extentions>> [--flags <flags>]
+			[--tabsize <number>] [--opencomment <string>]
+			[--opencomment2 <string>] [--closecomment <string>]
+			[--closecomment2 <string>] [--linecomment <string>]
+			[--linecomment2 <string>] [--commentfirstonline <boolean>]
+			[--stringchar <char>] [--charchar <char>] [--escapechar <char>]
+			[--preprocessorchar <char>] [--functionbeginchar <char>]
+			[--linecontinuationchar <char>] [--lineendchar <char>]
+			[--disablechar <char>] [--enablechar <char>]
+			[--case <boolean>] [--prefixesinstrings <boolean>]
+			[--prefixes <list>]
+			[--operators <string>]
+			[--indentstrings <list>] [--unindentstrings <list>]
+			[--keywords <list>] [--user1words <list>]
+			[--user2words <list>] [--colors <<list><list>>]
+
+description
+
+--name - <name> will be the identifier of the language. this param must be
+included.
+--extentions - <extentions> will be the file extentions assotiated with the
+language.
+--flags - <flags> should have the format option1|option2, where each option may
+be preceded with '!' to remove it. valid options include
+	opt_inserttabs, opt_showtabs, opt_bsatbol, opt_showmargin, opt_autoindent,
+	opt_braceansi, opt_bracegnu, opt_eoldos, opt_eolunix, opt_eolmac,
+	opt_fnbrace
+opt_inserttabs - inserts tabs when the tab key is pressed. default is on.
+opt_showtabs - shows tabs and spaces as visible characters instead of as
+whitespace. default is off.
+opt_bsatbol - allows the backspace key when pressed at the beginning of a line
+to move the cursor/caret to the end of the preceding line. default is on.
+opt_showmargin - shows the selection margin. default is on.
+opt_autoindent - autoindents text. default is on.
+opt_braceansi - braces are indented with ansi style. default is on.
+opt_bracegnu - braces are indented with gnu style. default is off.
+opt_eoldos - files are saved with the dos end-of-line style. default eol style.
+opt_eolunix - files are saved with the unix end-of-line style.
+opt_eolmac - files are saved with the mac end-of-line style.
+opt_fnbrace - inserts a space before a brace.
+--tabsize - sets the tabsize to <tabsize>.
+--opencomment - --linecomment2  - sets the string to look for while parsing
+text.
+--commentfirstonline sets the boolean of whether comments must be the first non-
+whitespace strings on a line (true for tcl for one). default is off.
+--stringchar - --endlinebeginchar - sets the char (one character) to look for
+while parsing text.
+--disablechar - sets the character that disables syntax hiliting.
+--enablechar - sets the character that reenables syntax hiliting.
+--case sets the case sensitivity of the language. default is on.
+--prefixesinstrings sets wether prefixed variables may appear inside strings or not. default is off.
+--prefixes - <list> is a list of strings/chars that define prefixes (i.e. put
+$ as a list item to hilite tcl variables when their value is referenced)
+--operators - <string> contains single characters that are used as operators.
+exclude this if you don't want operators to be colored. examples of operators
+in tcl are
+	{}[]()=+-*/!,
+--indentstrings - <list> is a list of strings/chars that increase indentation.
+--unindentstrings - <list> is a list of strings/chars that decrease indentation.
+--keywords - --user2words - <list> is a list of words that specify what words to
+look for while parsing text.
+--colors - <<list><list>> is a list of lists with the structure:
+	<color_index> <rgb_value>
+valid values for color_index include
+	ci_whitespace, ci_background, ci_normaltext, ci_selmargin, ci_selbackground,
+	ci_seltext, ci_keyword, ci_functionname, ci_comment, ci_number, ci_operator,
+	ci_string, ci_preprocessor, ci_user1, ci_user2
+rgb_value is a rgb specifier in the range 
+	000000-ffffff
+(i.e. 3 hex values ranging from 0 to 255 decimal).
+if a value of -1 is specified the default color is used.
+the default is -1 for each color_index but omitting it if specifying the 
+<color_index> will result in errors.
+ex. [list [list ci_whitespace ffffff]]
+
+==============================================================================
+
+variables:
+
+name
+
+cmds - a tcl array containing the values of commands SlackEdit recognizes
+
+synopsis
+
+	$cmds(command_name)
+
+description
+
+the cmds variable is a tcl array that contains the values of commands that
+SlackEdit recognizes as such. it can be used in conjunction with the hotkey
+command:
+	slack::hotkey -c ctrl+n $cmds(file_new)
+or other commands that send a command value to SlackEdit.
+this cmds variable should be considered 'read-only', and should only be used
+in scenarios like the one above; trying to change a value in the cmds array
+will result in an error.
+possible names for array members are:
+	file_new, file_open, file_advanced_open, file_open_favorites
+	file_save, file_save_as, file_save_all, file_read_only, file_print
+	slackedit_close, slackedit_exit
+	edit_undo, edit_redo, edit_cut, edit_copy, edit_paste, edit_delete
+	edit_select_all
+	bookmarks_clear
+	bookmarks_toggle_1, bookmarks_toggle_2, bookmarks_toggle_3
+	bookmarks_toggle_4, bookmarks_toggle_5, bookmarks_toggle_6
+	bookmarks_toggle_7, bookmarks_toggle_8, bookmarks_toggle_9
+	bookmarks_toggle_0
+	bookmarks_goto_1, bookmarks_goto_2, bookmarks_goto_3
+	bookmarks_goto_4, bookmarks_goto_5, bookmarks_goto_6
+	bookmarks_goto_7, bookmarks_goto_8, bookmarks_goto_9
+	bookmarks_goto_0
+	toggle_bookmark, next_bookmark, previous_bookmark, clear_all_bookmarks
+	auto_complete, match_brace, goto_last_change, edit_indent, edit_unindent
+	find, find_next, find_previous, replace
+	quickfind_next, quickfind_previous
+	incremental_forward, incremental_reverse
+	view_clipbook, view_outputwindow, view_statusbar, view_windowbar
+	view_toolbar, view_quicksearch, view_gotoline, view_fullscreen
+	linefeed_dos, linefeed_unix, linefeed_mac
+	settings_font, settings
+	window_close, window_close_all, window_next, window_previous
+	window_cascade, window_tile_horz, window_tile_vert, window_windowlist
+	help_about, help_tipofday
+	activate_mdiclient, activate_outputwindow, activate_clipbook
+	activate_quicksearch, activate_next, activate_previous
+	select_char_mode

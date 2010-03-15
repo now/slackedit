@@ -1,0 +1,59 @@
+This file contains notes on the further development of pcp_ stuff.
+notably SlackEdit (sled)
+
+The file is a list of tasks that need to be done and in the order given
+in this file. The items should allow other items and so on to be portable
+in that they themselves are portable. Each larger task is split into various
+minor parts that may themselves be split in smaller tasks. Function names may
+be given in certain cases to explain what functions are required and give a
+suggested name to them.
+
+0. Basic Structure
+
+  Specs:
+    * Portable
+	* Easy to use
+	* Expandable
+	* Interfaced
+	* Light -> Fast
+	* Independency
+	* Abstract
+
+  Discussion:
+	A COM like interface should be provided to each set of functions.
+	This will enable making Linux and Windows specific code easier to
+	make transparent by providing the same interface. Perhaps this is
+	not necessary but looks good and acts good. This should of course
+	be discussed with others first to get a good understanding on how
+	this is best and easiest implemented.
+		Another important part is that it should allow more and more
+	complex functions to be built from the basic ones. This is key.
+	This means that the base module should only contain code that
+	makes life easier for other modules (currently pcp_generic.dll).
+	Then a sort of windowing interface (potentially pcp_windowing.dll)
+	will be required. From this most other modules can be written
+	utilizing only functions in these two modules and from others
+	derived from these two.
+
+1. Memory Structure
+
+  Specs:
+	* Needs to be portable - Windows/Linux - base in malloc and partners.
+	* Should allow for debugging - can be done by using a linked list of
+	  alloced blocks and can thus easily be checked if the list is empty
+	  upon termination.
+
+  Functions:
+	Mem_Alloc, Mem_ReAlloc, Mem_Free, Mem_Verify, Mem_Debug?, Mem_New,
+	Mem_Delete
+
+2. File Access
+
+  Specs:
+    * Needs to be portable - Windows/Linux - base in file and partners.
+	* Should allow for all standard operations and conversions between
+	  different files systems (converting / to \\ and so on).
+
+  Functions:
+	File_Open, File_Close, File_Read, File_Write, File_GetSize, File_GetLine,
+	File_PutLine

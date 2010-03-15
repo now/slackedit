@@ -1,0 +1,168 @@
+SlackEdit Fixme File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<state> <problem_description>
+
+where <state> is one of:
+
+? - means that the problem hasn't been looked into
+* - means that the problem should be fixed but still needs testing
++ - means that the problem is being looked into
+= - means that the problem is fixed and tested
+! - means that the problem is not fixable at this time
+
+and <problem_description> is a short or long
+description of what doesn't work right.
+
+============= END FILE HEADER =============
+
+Search:
+
+* searching really slow on larger files (148kb) == very very bad
+* find previous doesn't work right
+* there are some bad memory leaks in the searching routines
+
+Edit:
+
+? if one leaves window on the top while doing a selection it gets inverted towards the bottom
+? if in column 1 and typing a closing bracker (}) it won't be indented correctly. Actually if anywhere but the right indent level it will screw up.
++ syntax problem with '.
++ syntax problem with preprocessor macros...
+
+GUI:
+
+* Exception when showing about control
+* Problems with text in Filelistbar. Offset to the left of text too wide in some cases. Weird
+? Display problems of toolbar. Grayed items can have a fucked up background (might be colordepth 32?) Occurs when low colordepth
+* Offset of last item in statusbar seems off by one pixel on old computer
+
+Menus:
+
++ Selected menuitems don't get hilighted with the right color
+? Next/Previous MDI Window could be disabled in main menu and sysmenus if only one mdi window exists
+? Close SlackEdit should have an icon portraing a window being zoomed to the tray
+? need a better cut icon
+? need a font icon
+? need a better goto line icon
+? need a better replace icon
+? need line-feed mode icons
+? need full screen icons
+? need autocomplete icon
+? need quickfind icons
+? need incremental search icons
+? need select all icon
+? need match brace icon
+? need goto last change icon
+? need page setup icon
+? need fast open icon
+
+Tcl:
+
+? Tcl problems for some reason (no scripts loaded, dll loaded)
+
+Other:
+
+? Perhaps Run Dos/Win Command could be made a TCL script using 'dialog' and output to an editbox? or to the output window.
+? Printing doesn't work
+
+Done:
+
+* Browsing for Tcl scripts doesn't open in default directory if not set (set to currentdir in any case)
+! Should the urlcontrols text be selectable (i.e. hilighted) (hard)
+! URLControls Propertysheet should only have an OK button (i.e. no Cancel)
+! Copyright symbol in about displayed wrong. Years 1998-1999 should be 1998-2000
+! About propertysheet should only have an OK button (i.e. no Cancel)
+! Opening already open files from Favorites could tell that it's already open and ask for a reload
+! check that the toolbar is created before any mdi children
+! check that the other rebar items and such are created before any mdi children
+! there seems to be a problem with Menu_Destroy...and Menu_GetItemCount shouldn't be called in each for recurrsion
+! all children should be created from start (i.e. toolbar so that Config_Write won't complain and toggling of toolbaritems works and such)
+! break out of EditChild_UpdateStatusbarInfo if !IsWindow(hwnd)
+= MDI-Windows are sometimes really small (only part of titlebar) when first loaded
+= Open Favorite Dialog can be made larger to allow wider listview
+= 'File not saved yet' messagebox should be made better, perhaps even a special dialog
+= Menuitems won't be grayed when no open mdi windows
+= Won't Exit
+= opening more than one file in a root directory doesn't work
+= MRU Settings: DosCmd should be Dos Command Combo
+= MRU Settings: Every item should have it's type defined. Or perhaps under a specific heading (menus, combo boxes, and so on)
+= Tip-of-da-Day Crashes
+= GotoLine Toggling doesn't remove the rebar item
+= Toolbar/Find items in rebarmenu aren't checked.
+= Run Dos/Win Command dialogs buttons should have a divider between them (or two?)
+= Open menu command won't work without an open edit.
+= Line-Feed Mode Radiogroup menu items don't seem to work
+= URLControls property sheet window should be centered or at least under mouse
+= Add To Desktop of URLControls menu shows the property sheet of the URL as well...problem with case/break?
+= URLControls menu's menuitem 'Open' should be set to default menuitem
+= Problems with some icons in Filelistbar Sysmenus
+= Problems with saving of maximized state? might have been fixed
+= Problems with removing edited files from file-change-notification-list
+= Set Font won't work without an open Edit
+= Shift+Backspace doesn't work right it seems
+= Toggling the menu items (rebar) with the visibility of them
+= linefeedmode in menu should use radio check marks instead of normal ones
+= gotoline when no edits open, should be selectable, but perhaps grayed
+= Open Favorite Dialog adds items that already exists. Should only contain one of the same entry. If one item is removed, both are.
+= When pressing Browse, if no item is selected in the list view it complains about this and then opens a browse dialog.
+= Doubleclicking in listview not right
+= Opening a nonexistent file from 'Recent Files' menu opens an empty Edit with no title.
+= Recent files doesn't work or?
+= Go To Bookmarks submenu items not grayed when bookmarks don't exist
+= Switch to just deleted file from filewatching doesn't work
+= Edit->Indent doesn't work right if no selection exists
+= Alt+F4 won't send to systemtray it seems, only first time...check the bool...might not get unset...
+= Systray menuitems bitmaps aren't right.
+= Systray menu's 'Open' displays SlackEdit even if you opt not to open a file (i.e. press Cancel).
+= starting a new instance of slackedit doesn't bring slackedit from the systray and not open another edit
+= last item in statusbar should be READ for read only, grayed if not and so on...
+= Only reload last open files if not crashed
+= Option for MDI Window to only reload last open if no file on command line
+= Links to nonexistent files in 'Recent Files' menu. Could be cleared on command.
+= ::slack::get_sel doesn't seem to work
+= prefixed variables (a la TCL) will not get hilighted if in ""
+= Ctrl+Tab seems to go backwards (Previous) instead of normal direction (open three windows to see effect). This is actually due to the fact that windows are put into the windowbar in a last in last item order...
+= Lots of problems with Search/Replace (especially regexps):
+= Find Next doesn't always work (Go to Find rebar, type, search, F3)
+= Regexp-searching doesn't work, and the warn box that no more items could be found should have the text: 'The REGEXP '%s' could not be found.'
+= Setting 'Whole word only' and Find Next crashes, If direction is Up.
+= Find Previous shortcut doesn't work
+= Direction Up - Find Next doesn't work
+= For regexp searches the message should be The REGEXP couldn't be found
+= Option to toggle wrapping of search
+= Selected Text not displayed in Search For Editbox/Last search for not selected.
+= if text is selected QuickFind Next is grayed. Should never be unless not over a word.
+= Uppercase version of text is saved in Find What combo. Should be what was written, not actually searched for (case insensitive)
+= Find Next/Previous doesn't 'warn' that no more items could be found
+= QuickFind Next needs testing
+= QuickFind Previous needs testing
+= Incremental Forward/Backwards needs testing
+= QuickSearch Needs Testing and Fixing
+= there seems to be something wrong with the urlcontrols info for the about dialog
+= Main_OnInitMenuPopup, remove all stuff under case IDM_MAIN_VIEW:
+= in Main_OnInitMenuPopup, only process it if its a submenu of the main menu
+= in Paint_Bitmap_CreateEmpty check what one should do with the DC created from GetDC(NULL);
+! check for any Mem_AllocStr() and Mem_ReAlloc that doesn't get freed in the tcl loading stuff
+= after calling Paint_GetSystemPallete the hpalette needs freeing
+= make GetModuleFileName into a Path function and make it all lowercase or something
+= in Config_Scripts_DlgProc: PSN_APPLY: free the created RegKey
+= in Config_Associations_DlgProc: PSN_APPLY: check the code for Slackedit Here!
+= static BOOL LoadGuiImage needs checking, GetIconInfo stuff needs freeing
+= Initially (first run) mdi windows are super small
+= No message when only find is the same as before
+= Statusbar needs resetting after first notification of search wrapped (if new item found that is) (could give a message like String 'Blah' found on line blah (column blah))
+= Drawing of lines in Edits (clean files) seems very slow. However, selections work fine...are all lines redrawn? seems very strange. It's the updating that's slow. This happens while repeating a certain character many times (i.e. backspace or 'd'). Can be a problem with WM_CHAR or similar
+= If a file is opened that is already open in the editor it is not selected/doesn't get focus.
+= Statusbar INS/OVR item in OVR mode won't pop-out
+= Problem with Rebar not poping up when selecting something other than the toolbar and toolbar not existing...
+= Last character on longest line while scrolling is redrawn endlessly (not pretty)
+= Long lines need to be supported
+= Basebar windows needs checking and perhaps fixing
+= The Position item in the statusbar is very erratic
+= Lock at startup if error in scripts
+= it seems that an unsaved file made its way to the recent files menu
+= Configuration keyboard shortcut should be changed, as well as Font Setting.
+= Do all menu items have a correct infotip (statusbartip)

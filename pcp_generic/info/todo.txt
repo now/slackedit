@@ -1,0 +1,27 @@
+pcp_generic Todo File
+
+=============== FILE HEADER ===============
+
+The syntax used in this file goes something like:
+
+	<change_type> <change_description>
+
+where <change_type> is one of:
+
+(Note: The word 'Feature' has quite a loose meaning here)
+
++ - Feature to add
+- - Feature to remove
+= - Feature to change
+% - Feature to fix
+* - Major event
+# - Feature to look into
+?X - Feature to perhaps X (add/remove/change)
+
+and <change_description> is a short or long
+description of what has been done.
+
+============= END FILE HEADER =============
+
+= rework linkedlist
+
